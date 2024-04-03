@@ -1,0 +1,54 @@
+\documentclass[a4paper, 12pt]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+
+% ---- PACCHETTI ----
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{physics}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+% \usepackage{ntheorem}
+\usepackage{enumitem}
+
+\usepackage{xurl}
+
+% ---- REIMPOSTAZIONI ----
+\renewcommand\thesection{\arabic{section}}
+\numberwithin{equation}{chapter}
+
+% ---- AMBIENTI PERSONALI ----
+% \newenvironment{definition}[2]{}
+% \newtheorem{theorem}{Teorema}
+% \newtheorem{definition}{Definizione}
+\newtheorem{lemma}{Lemma}[chapter]
+
+% ---- COMANDI PERSONALI ----
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\newcommand{\func}[3]{#1:#2\rightarrow#3}
+
+\begin{document}
+\input{misc/title}
+
+\pagenumbering{Roman}
+\input{misc/preface}
+\input{misc/programme}
+\input{misc/toc}
+
+\pagenumbering{arabic}
+\input{chapters/chapter1}
+
+\appendix
+\input{chapters/appA}
+
+
+\end{document}
