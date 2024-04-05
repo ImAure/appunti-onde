@@ -1,17 +1,18 @@
 \babel@toc {italian}{}\relax 
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}L'Oscillatore Armonico}{1}{}%
-\contentsline {section}{\numberline {1}Oscillatore Armonico Unidimensionale}{2}{}%
-\contentsline {section}{\numberline {2}Oscillatore Armonico Bidimensionale}{2}{}%
-\contentsline {subsection}{\numberline {2.1}Oscillatore isotropo}{3}{}%
-\contentsline {subsection}{\numberline {2.2}Oscillatore anisotropo}{3}{}%
+\contentsline {section}{\numberline {1}Introduzione}{1}{}%
+\contentsline {section}{\numberline {2}Oscillatore Armonico Unidimensionale}{2}{}%
+\contentsline {section}{\numberline {3}Oscillatore Armonico Bidimensionale}{2}{}%
+\contentsline {subsection}{\numberline {3.1}Oscillatore isotropo}{3}{}%
+\contentsline {subsection}{\numberline {3.2}Oscillatore anisotropo}{3}{}%
 \contentsline {subsubsection}{Diagonalizzazione del potenziale}{3}{}%
 \contentsline {subsubsection}{Equazioni del moto}{5}{}%
 \contentsline {subsubsection}{Energia cinetica}{5}{}%
-\contentsline {section}{\numberline {3}Oscillatore a tre Gradi di Libert\`a}{5}{}%
-\contentsline {subsection}{\numberline {3.1}Tre masse a estremi liberi}{6}{}%
-\contentsline {subsection}{\numberline {3.2}Tre masse con condizioni periodiche al contorno}{7}{}%
-\contentsline {section}{\numberline {4}Oscillatore a $N$ Gradi di Libert\`a}{8}{}%
+\contentsline {section}{\numberline {4}Oscillatore a tre Gradi di Libert\`a}{5}{}%
+\contentsline {subsection}{\numberline {4.1}Tre masse a estremi liberi}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Tre masse con condizioni periodiche al contorno}{7}{}%
+\contentsline {section}{\numberline {5}Oscillatore a $N$ Gradi di Libert\`a}{8}{}%
 \contentsline {chapter}{\numberline {A}Cenni su Numeri e Funzioni in $\mathbb {C}$}{11}{}%
 \contentsline {section}{\numberline {1}Rappresentazione dei numeri complessi}{11}{}%
 \contentsline {subsection}{\numberline {1.1}Forma trigonometrica e forma esponenziale}{11}{}%

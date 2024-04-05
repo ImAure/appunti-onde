@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.3.26)  3 APR 2024 19:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024/Arch Linux) (preloaded format=pdflatex 2024.3.26)  5 APR 2024 18:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -8,8 +8,8 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/share/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2023/05/17 v1.4n Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/bk12.clo
-File: bk12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+(/usr/share/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count188
 \c@chapter=\count189
@@ -508,7 +508,7 @@ e
 File: images/LogoUniCT.png Graphic file (type png)
 <use images/LogoUniCT.png>
 Package pdftex.def Info: images/LogoUniCT.png  used on input line 4.
-(pdftex.def)             Requested size: 191.10214pt x 89.27533pt.
+(pdftex.def)             Requested size: 176.40198pt x 82.41487pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -522,7 +522,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: images/LogoDFA.png Graphic file (type png)
 <use images/LogoDFA.png>
 Package pdftex.def Info: images/LogoDFA.png  used on input line 8.
-(pdftex.def)             Requested size: 191.10214pt x 58.47578pt.
+(pdftex.def)             Requested size: 176.40198pt x 53.97656pt.
  [1
 
 
@@ -550,63 +550,61 @@ File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 ])
 (./chapters/chapter1.tex
 Capitolo 1.
+[1
 
-Underfull \vbox (badness 1199) has occurred while \output is active []
-
- [1
-
-]
-[2] [3] [4] [5]
+] [2] [3] [4] [5]
 \matrixtoks=\toks46
- [6] [7]
+ [6]
 \matrixtoks=\toks47
 \matrixtoks=\toks48
 \matrixtoks=\toks49
- [8]) (./chapters/appA.tex [9] [10
-
-]
+ [7] [8] [9]) (./chapters/appA.tex [10]
 Appendice A.
-[11]) [12] (./main.aux)
+[11
+
+]) [12] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 16052 strings out of 476065
- 305572 string characters out of 5793347
- 1946187 words of memory out of 5000000
- 37851 multiletter control sequences out of 15000+600000
- 584415 words of font info for 106 fonts, out of 8000000 for 9000
+ 16079 strings out of 476065
+ 305920 string characters out of 5793347
+ 1948187 words of memory out of 5000000
+ 37872 multiletter control sequences out of 15000+600000
+ 588920 words of font info for 121 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  84i,21n,93p,2040b,367s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
 /share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
-r/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/
-cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx14
-40.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-dist/
-fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
-rm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></us
-r/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1
-/public/cm-super/sfsl1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-supe
-r/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-
-Output written on main.pdf (18 pages, 592645 bytes).
+st/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msb
+m10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist
+/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/s
+fbx2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></u
+sr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf-
+dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf-dist/fonts/type
+1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-sup
+er/sfrm1095.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
+></usr/share/texmf-dist/fonts/type1/public/cm-super/sfsl1095.pfb></usr/share/te
+xmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf-dist/fonts/
+type1/public/cm-super/sftt1095.pfb>
+Output written on main.pdf (18 pages, 651530 bytes).
 PDF statistics:
- 207 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 222 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
