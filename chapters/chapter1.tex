@@ -5,12 +5,12 @@
 %    \ \_\  \ \_____\     \ \____-  \ \_____\   %
 %     \/_/   \/_____/      \/____/   \/_____/   %
 % - % - % - % - % - % - % - % - % - % - % - % - %
-% [ ] Sistemare introduzione (copiare il goldstein!!! \eta^\alpha idea molto bella)
+% [ ] Sistemare introduzione (copiare il Goldstein!!! \eta^\alpha idea molto bella)
 % [ ] Label capitolo
 % [ ] Reference appendice
 % [ ] Finire caso 3D!!!
 % [ ] Laurearsi
-% [ ] Spezzare il calcolo diagon. pot. per N molle (sviluppare \zeta_n^2 a parte e poi mettere nella sommatoria)
+% [x] Spezzare il calcolo diagon. pot. per N molle (sviluppare \zeta_n^2 a parte e poi mettere nella sommatoria)
 \chapter{L'Oscillatore Armonico}
     \section{Introduzione}
     Dato un sistema fisico le cui configurazioni sono identificate dalle coordinate pure $q^\alpha$, dalla meccanica \`e noto che le configurazioni di equilibrio stabile si hanno in corrispondenza dei minimi del potenziale $V\qty(q^\alpha)$. Assumendo che $V$ sia una funzione almeno di classe $C^2$ e che ammetta minimo, \`e possibile effettuare una traslazione che ponga l'origine del S.d.R.\footnote{Sistema di riferimento} coincidente col punto di minimo e sviluppare in serie di Taylor/Mac Laurin il potenziale, arrestandosi al termine di secondo grado. Si ottiene dunque: $$V\qty(q^\alpha)=V\qty(\vb{0})+\pdv{V}{q^\alpha}\eval_{\vb{0}}q^\alpha+\frac{1}{2}\pdv{V}{q^\alpha}{q^\beta}\eval_{\vb{0}}q^\alpha q^\beta+R\qty(q^\alpha).$$ Ricordando che il potenziale \`e definito a meno di una costante additiva e che all'equilibrio $\displaystyle\pdv{V}{q^\alpha}\eval_{\vb{0}}=0$, e trascurando il termine infinitesimo, si pu\`o riscrivere il potenziale come:
@@ -129,8 +129,27 @@
     \begin{proof}
         Proviamo la \eqref{eq:delta:1}. \par Se $q=0$, banalmente: $$\sum_{n=0}^{N-1}1=N.$$ \par Se $q\neq0$, osserviamo che si pu\`o scrivere: $$\sum_{n=0}^{N-1} e^{iqx_n}=\sum_{n=0}^{N-1} e^{iqna}=\sum_{n=0}^{N-1}\qty(e^{iqa})^n=\frac{1-e^{iqNa}}{1-e^{iqa}}$$ essendo il termine generale della successione delle somme parziali di una serie geometrica di ragione $e^{iqa}$. Sostituendo la \eqref{eq:q} si vede subito che tale somma risulta $0$. \\ Allo stesso modo si prova la \eqref{eq:delta:2}.
     \end{proof}
-    \par Verifichiamo adesso che le trasformazioni \eqref{eq:cambio:1} e \eqref{eq:cambio:2} sono l'una l'inversa dell'altra mostrando che la loro composizione restituisce l'identit\`a: $$\zeta_n=\frac{1}{\sqrt{N}}\sum_{q}e^{iqx_n}\qty(\frac{1}{\sqrt{N}}\sum_{p=0}^e{N-1}e^{-iqx_p}\zeta_p)=\frac{1}{N}\sum_{p,q}e^{iq\qty(x_n-x_p)}\zeta_p.$$ Poich\'e $\zeta_p$ non dipende da $q$, \`e possibile estrarlo dalla rispettiva sommatoria: $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\qty[\sum_q e^{iq\qty(x_n-x_p)}]$$ dove per il lemma \ref{lm:delta} si pu\`o scrivere: $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\delta_{n,p}=\zeta_n$$ che \`e appunto l'identit\`a. \par Ci chiediamo quindi se questo cambio di coordinate ci fornisca i modi normali di oscillazione del sistema, diagonalizzando \eqref{eq:potenziale:2}. Sostituiamo nel potenziale la \eqref{eq:cambio:1}: 
+    \par Verifichiamo adesso che le trasformazioni \eqref{eq:cambio:1} e \eqref{eq:cambio:2} sono l'una l'inversa dell'altra mostrando che la loro composizione restituisce l'identit\`a: $$\zeta_n=\frac{1}{\sqrt{N}}\sum_{q}e^{iqx_n}\qty(\frac{1}{\sqrt{N}}\sum_{p=0}^e{N-1}e^{-iqx_p}\zeta_p)=\frac{1}{N}\sum_{p,q}e^{iq\qty(x_n-x_p)}\zeta_p.$$ Poich\'e $\zeta_p$ non dipende da $q$, \`e possibile estrarlo dalla rispettiva sommatoria: $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\qty[\sum_q e^{iq\qty(x_n-x_p)}]$$ dove per il Lemma \ref{lm:delta} si pu\`o scrivere: $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\delta_{n,p}=\zeta_n$$ che \`e appunto l'identit\`a. \par Ci chiediamo quindi se questo cambio di coordinate ci fornisca i modi normali di oscillazione del sistema, diagonalizzando \eqref{eq:potenziale:2}. Studiamo la seguente quantit\`a:
     \begin{multline*}
-        \sum_n\zeta_n^2=\sum_n\qty(\frac{1}{\sqrt{N}}\sum_q e^{iqx_n}Q_q)^2=\\=\frac{1}{N}\sum_n\qty(\sum_q e^{iqx_n}Q_q)\Biggl(\sum_{q'} e^{iq'x_n}Q_{q'}\Biggr)=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}\sum_ne^{i\qty(q+q')x_n}=\\=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}N\delta_{q,-q'}=\sum_qQ_qQ_{-q}
+        \zeta_n^2=\frac{1}{N}\qty(\sum_q e^{iqx_n}Q_q)^2=\frac{1}{N}\qty(\sum_q e^{iqx_n}Q_q)\Biggl(\sum_{q'} e^{iq'x_n}Q_{q'}\Biggr)=\\=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}e^{i\qty(q+q')x_n},
     \end{multline*}
-    
+    sommiamo quindi su $n$ e applichiamo ancora il Lemma \ref{lm:delta} dopo aver raccolto i termini comuni: $$\sum_n\zeta_n^2=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}\sum_ne^{i\qty(q+q')x_n}=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}N\delta_{q,-q'}=\sum_qQ_qQ_{-q}.$$
+    \par Prima di proseguire ulteriormente, facciamo delle considerazioni utili. Ricordiamo che le $\zeta_n$ sono funzioni reali e quindi deve essere $\zeta_n^*=\zeta_n$.\footnote{Con $\zeta_n^*$ indichiamo il complesso coniugato di $\zeta_n$} Inoltre, dalla \eqref{eq:cambio:1}, possiamo ricavare che $\zeta_n^*$ ha forma: $$\zeta_n^*=\frac{1}{\sqrt{N}}\sum_qe^{iqx_n}Q_q^*=\frac{1}{\sqrt{N}}\sum_{-q}e^{iqx_n}Q_{-q}^*,$$ dove, nello scrivere la seconda uguaglianza, \`e stato sfruttato il fatto che l'indice $q$ \`e saturato e quindi nulla vieta di `cambiargli il nome' in $-q$. Segue naturalmente:
+    \begin{equation}
+        \zeta_n=\zeta_n^* \iff Q_q=Q_{-q}^* \iff Q_{-q}=Q_q^*.
+        \label{eq:QQ}
+    \end{equation}
+    Supponendo $Q=\alpha\qty(q)+i\beta\qty(q)$ e sostituendo quanto trovato nei conti precedenti si ottiene:
+    \begin{equation}
+        \sum_n\zeta_n^2=\sum_qQ_qQ_q^*=\sum_q\qty[\alpha^2\qty(q)+\beta^2\qty(q)]
+        \label{eq:sommazetaquadro}
+    \end{equation}
+    \par A questo punto possiamo sceivere per esteso il potenziale: $$V=\frac{1}{2}m\omega^2\sum_n\qty(\zeta_{n+1}-\zeta_n)^2$$ Valutiamo la quantit\`a tra parentesi: $$\zeta_{n+1}-\zeta_n=\frac{1}{\sqrt{N}}\sum_qQ_q\qty(e^{iqx_{n+1}}-e^{iqx_n})=\frac{1}{\sqrt{N}}\sum_qQ_qe^{iqx_n}\qty(e^{iqa}-1)$$ e inseriamola nel potenziale $V$ che, una volta sviluppato il quadrato similmente a prima e applicata la \eqref{eq:QQ}, diventa:
+    \begin{multline*}
+        V=\frac{1}{2}\frac{m\omega^2}{N}\sum_n\sum_{q,q'}e^{iqx_n}\qty(e^{iqa}-1)e^{iq'x_n}\bigl(e^{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_{q,q'}\delta{q,-q'}\qty(e^{iqa}-1)\bigl(e^{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)Q_qQ_{-q}=\\=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)Q_qQ_q^*
+    \end{multline*}
+    Da cui l'espressione pi\`u sintetica ed elegante del potenziale:
+    \begin{equation}
+        V=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)\norm{Q_q}^2
+    \end{equation}
+    che non \`e altro che una forma quadratica nelle variabili $Q_q$ la cui matrice dei coefficienti \`e diagonale e contiene gli autovalori $\qty(e^{iqa}-1)\qty(e^{-iqa}-1)$, ciascuno associato all'autovettore $Q_q$ corrispondente. \par Per visualizzare ancora meglio il risultato ottenuto, moltiplichiamo e dividiamo per $\displaystyle 4i^2e^{i\frac{qa}{2}}$. Applicando le formule di Eulero otteniamo: $$V=\frac{-4}{2}m\omega^2\sum_q\frac{e^{i\frac{qa}{2}}-e^{-i\frac{qa}{2}}}{2i}\frac{e^{-i\frac{qa}{2}}-e^{i\frac{qa}{2}}}{2i}\norm{Q_q}^2=2m\omega^2\sin^2\qty(\frac{qa}{2})\norm{Q_q}^2$$ da cui le $N$ equazioni del moto: $$-\pdv{V}{Q_q}=m\ddot{Q}_q \iff \ddot{Q}_q=4\omega^2\sin^2\qty(\frac{qa}{2})Q_q=-\Omega_q^2Q_q,$$ ponendo $\displaystyle\Omega_q=2\omega\sin\qty(\frac{qa}{2})$, che hanno soluzioni $\displaystyle Q_q\qty(t)=e^{\pm i\Omega_qt}$. Come gi\`a detto in precedenza, la parte reale di queste soluzioni \`e costituita da una somma di seni e coseni, proprio come ci aspettavamo. Notiamo inoltre che anche questa volta per $q=0$ si ha il moto di traslazione che non influenza la dinamica del sistema.

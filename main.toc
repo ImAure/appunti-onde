@@ -13,9 +13,9 @@
 \contentsline {subsection}{\numberline {4.1}Tre masse a estremi liberi}{6}{}%
 \contentsline {subsection}{\numberline {4.2}Tre masse con condizioni periodiche al contorno}{7}{}%
 \contentsline {section}{\numberline {5}Oscillatore a $N$ Gradi di Libert\`a}{8}{}%
-\contentsline {chapter}{\numberline {A}Cenni su Numeri e Funzioni in $\mathbb {C}$}{11}{}%
-\contentsline {section}{\numberline {1}Rappresentazione dei numeri complessi}{11}{}%
-\contentsline {subsection}{\numberline {1.1}Forma trigonometrica e forma esponenziale}{11}{}%
-\contentsline {subsection}{\numberline {1.2}Formule di Eulero}{12}{}%
-\contentsline {section}{\numberline {2}Operazioni coi numeri complessi}{12}{}%
-\contentsline {subsection}{\numberline {2.1}Somma e prodotto}{12}{}%
+\contentsline {chapter}{\numberline {A}Cenni su Numeri e Funzioni in $\mathbb {C}$}{13}{}%
+\contentsline {section}{\numberline {1}Rappresentazione dei numeri complessi}{13}{}%
+\contentsline {subsection}{\numberline {1.1}Forma trigonometrica e forma esponenziale}{13}{}%
+\contentsline {subsection}{\numberline {1.2}Formule di Eulero}{14}{}%
+\contentsline {section}{\numberline {2}Operazioni coi numeri complessi}{14}{}%
+\contentsline {subsection}{\numberline {2.1}Somma e prodotto}{14}{}%
