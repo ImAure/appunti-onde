@@ -1,28 +1,67 @@
-\chapter{Cenni su Numeri e Funzioni in $\C$}\label{app:A}
-\section{Rappresentazione dei numeri complessi}
-    I numeri complessi sono un'utile estensione dei numeri reali che fanno uso dell'unit\`a immaginaria $i$ definita come $i^2=-1$. L'insieme $\C$ dei numeri complessi \`e isomorfo a $\R^2$ e a ogni coppia $(x,y)$ si pu\`o associare il numero $z=x+iy$, espresso nella forma algebrica. $x=\Re\qty(z)$ e $y=\Im\qty(y)$ sono detti rispettivamente \emph{parte reale} e \emph{parte immaginaria}.
-    \subsection{Forma trigonometrica e forma esponenziale}
-        Rappresentando il numero $z=x+iy\neq 0$ nel piano di Argand-Gauss, possiamo osservare che la sua posizione \`e univocamente determinata conoscendo due parametri, il \emph{modulo} $\rho=\sqrt{z\overline{z}}=\sqrt{x^2+y^2}$ e l'\emph{argomento} $\displaystyle\theta=\arctan{\frac{y}{x}}$. \`E quindi possibile eseguire la trasformazione:
-        \begin{equation*}
-        \begin{cases}
-            x=\rho\cos\theta\\
-            y=\rho\sin\theta
-        \end{cases}
-        \end{equation*}
-        da cui $z=\rho\qty(\cos\theta+i\sin\theta)$, detta \emph{forma trigonometrica}. \par Adesso consideriamo il numero $\rho e^{i\theta}$ e scriviamolo attraverso la serie esponenziale: 
-        \begin{multline*}
-            \rho e^{i\theta}=\rho\sum_{n=0}^{+\infty}\frac{\qty(i\theta)^n}{n!}=\rho\qty[\sum_{n=0}^{+\infty}\frac{\qty(i\theta)^{2n}}{\qty(2n)!}+\sum_{n=0}^{+\infty}\frac{\qty(i\theta)^{2n+1}}{\qty(2n+1)!}]=\\ =\rho\qty[\sum_{n=0}^{+\infty}\qty(-1)^n\frac{\theta^{2n}}{\qty(2n)!}+i\sum_{n=0}^{+\infty}\qty(-1)^n\frac{\theta^{2n+1}}{\qty(2n+1)!}]=\rho\qty(\cos\theta+i\sin\theta)
-        \end{multline*}    
-        dove si \`e usato $i^{2n}=\qty(-1)^n$ e $i^{2n+1}=i\qty(-1)^n$. Osserviamo dunque che esiste l'uguaglianza tra la forma trigonometrica e quella che chiamiamo \emph{forma esponenziale}; la relazione che le lega \`e detta \emph{Identit\`a di Eulero}.
-    \subsection{Formule di Eulero}
-        Ricaviamo ora due relazioni utili partendo dall'Identit\`a appena otteuta. Consideriamo $z=\rho e^{i\theta}=\rho\qty(\cos\theta+i\sin\theta)$ e il suo coniugato $\overline{z}=\rho e^{-i\theta}=\rho\qty(\cos\theta-i\sin\theta)$.
-        Da semplici conti:
+\chapter{Cenni sui Numeri Complessi}\label{app:A}
+I numeri complessi sono la naturale estensione del campo reale $\qty(\R,+,\cdot)$ che pur sacrificando la relazione d'ordine permettono di avere una struttura algebricamente chiusa.
+\section{Costruzionde di $\C$}
+Sia $\R^2=\qty{\qty(x,y):x,y\in\R}$, poniamo $z_1=\qty(x_1,\ y_1)$, $z_2=\qty(x_2,\ y_2)$ e siano definite le operazioni:
+\begin{align*}
+    \func{+}{\R^2\times\R^2}{\R^2}\quad&\qty(z_1,\ z_2)\mapsto\qty(x_1+x_2,\ y_1+y_2)\\
+    \func{\cdot}{\R^2\times\R^2}{\R^2}\quad&\qty(z_1,\ z_2)\mapsto\qty(x_1x_2-y_1y_2,\ x_1y_2+x_2y_1)
+\end{align*}
+Chiamiamo $\C=\qty(\R^2,+,\cdot)$ la struttura cos\`i costruita, che si dimostra facilmente essere un campo.
+\subsection{Forme e propriet\`a dei numeri complessi}
+    Definiamo \emph{modulo} di un numero complesso $z$ la quantit\`a: $$\abs{z}=\sqrt{x^2+y^2}\in\R.$$ 
+    \subsubsection{Forma algebrica}
+        Osserviamo inoltre che l'insieme $\qty{\qty(x,y)\in\R^2:y=0}$ \`e isomorfo ad $R$, per cui poniamo $x=\qty(x,0)$. Sia inoltre $i=\qty(0,\ 1)$, da cui:
         \begin{align*}
-            z+\overline{z}=\rho e^{i\theta}+\rho e^{-i\theta}&=2\rho\cos\theta \iff \cos\theta=\frac{e^{i\theta}+e^{-i\theta}}{2}\\
-            z-\overline{z}=\rho e^{i\theta}-\rho e^{-i\theta}&=2\rho i\sin\theta \iff \sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i}\\
+            &y\cdot i=\qty(y,0)\cdot(0,1)=(0,y):=iy\\
+            &i^2=\qty(0,1)\cdot\qty(0,1)=(-1,0)=-1
         \end{align*}
-\section{Operazioni coi numeri complessi}
-Vediamo brevemente come eseguire facilmente le operazioni algebriche pi\`u importanti in $\C$.
-    \subsection{Somma e prodotto}
-        Per sommare e sottrare due numeri complessi \`e utile fare riferimento alla loro forma algebrica, infatti la loro somma si esegue per componenti, esattamente come per i vettori di $\R^2$. $$z_1=x_1+iy_1\ ,\ z_2=x_2+iy_2$$ $$z_1\pm z_2=\qty(x_1\pm x_2)+i\qty(y_1\pm y_2)$$ Il prodotto si pu\`o eseguire come prodotto di binomi, ricordando $i^2=-1$: $$z_1z_2=\qty(x_1+iy_1)\qty(x_2+iy_2)=x_1x_2-y_1y_2+i\qty(x_1y_2+x_2y_1)$$
-        Tuttavia, pu\`o essere pi\`u utile ricondursi alla forma esponenziale, in quanto, detti $z_1=\rho_1e^{i\theta}$, $z_2=\rho_2e^{i\phi}$, si ha: $$z_1z_2=\rho_1e^{i\theta}\rho_2e^{i\phi}=\rho_1\rho_2e^{i\qty(\theta+\phi)}$$ $$\frac{z_1}{z_2}=\rho_1e^{i\theta}\frac{1}{\rho_2}e^{-i\phi}=\frac{\rho_1}{\rho_2}e^{i\qty(\theta-\phi)}$$ Da cui segue subito l'elevamento a potenza: $$z^r=\qty(\rho e^{i\theta})^r=\rho^re^{ir\theta}$$
+        In questo modo ogni numero complesso $z=\qty(x,y)$ pu\`o essere scritto nella sua \emph{forma algebrica} $z=x+iy$, infatti: $$x+iy=\qty(x,0)+\qty(0,y)=(x,y)$$
+        Dato un numero complezzo $z=x+iy$, definiamo:
+        \begin{itemize}
+            \item $\Re z=x$, detta \emph{parte reale} di $z$;
+            \item $\Im z=iy$, detta \emph{parte immaginaria} di $z$;
+            \item $\overline{z}=x-iy$, detto \emph{complesso coniugato} di $z$.
+        \end{itemize}
+        Vale inoltre la propriet\`a $\abs{z}=z\overline{z}$.
+    \subsection{Forma trigonometrica ed esponenziale}
+        Come noto, \`e possibile rappresentare i punti del piano $\qty(x,y)\in\R^2$, escluso $\qty(0,0)$ in coordinate polari, fissando le due coordinate $\rho$, detto \emph{raggio polare}, e $\theta$, detto \emph{angolo polare}. \par Pensando ai numeri complessi come punti del piano, si osserva: $$x=\rho\cos\theta,\quad y=\rho\sin\theta,$$ da cui: $$z=\rho\qty(\cos\theta+i\sin\theta),$$ che viene detta \emph{forma trigonometrica} di $z$. Segue naturalmente che:
+        \begin{itemize}
+            \item $\rho=\abs{z}$;
+            \item $\theta$ \`e l'angolo che risolve $x=\rho\cos\theta$ e $y=\rho\sin\theta$;
+            \item $\overline{z}=\rho\qty[\cos\qty(-\theta)+i\sin\qty(-\theta)]=\rho\qty(\cos\theta-i\sin\theta)$.
+        \end{itemize}
+        \par Consideriamo ora la quantit\`a $e^{i\theta}$ e dimostriamo che rappresenta ancora un numero complesso. \`E possibile interpretare l'esponenziale come una somma infinita di termini, esprimendo la funzione $e^z$ come serie di Taylor centrata in $0$: $$e^{i\theta}=\sum_{n=0}^{+\infty}\frac{\qty(i\theta)^n}{n!}=\sum_{n=0}^{+\infty}i^n\frac{\theta^n}{n!}=\sum_{n=0}^{+\infty}\qty(-1)^n\frac{\theta^{2n}}{\qty(2n)!}+i\sum_{n=0}^{+\infty}\qty(-1)^n\frac{\theta^{2n+1}}{\qty(2n+1)!}$$ dove \`e evidente la presenza degli sviluppi di seno e coseno, per cui: $$e^{i\theta}=\cos\theta+i\sin\theta.$$ Segue che qualunque numero complesso $z\neq 0$ pu\`o essere espresso come: $$z=\rho\qty(\cos\theta+i\sin\theta)=\rho e^{i\theta}$$ che viene detta \emph{forma esponenziale} del numero complesso. \par Segue in modo banale la propriet\`a $\overline{z}=\rho e^{-i\theta}$
+
+
+
+
+
+\mycomment{
+    \section{Rappresentazione dei numeri complessi}
+        I numeri complessi sono un'utile estensione dei numeri reali che fanno uso dell'unit\`a immaginaria $i$ definita come $i^2=-1$. L'insieme $\C$ dei numeri complessi \`e isomorfo a $\R^2$ e a ogni coppia $(x,y)$ si pu\`o associare il numero $z=x+iy$, espresso nella forma algebrica. $x=\Re\qty(z)$ e $y=\Im\qty(y)$ sono detti rispettivamente \emph{parte reale} e \emph{parte immaginaria}.
+        \subsection{Forma trigonometrica e forma esponenziale}
+            Rappresentando il numero $z=x+iy\neq 0$ nel piano di Argand-Gauss, possiamo osservare che la sua posizione \`e univocamente determinata conoscendo due parametri, il \emph{modulo} $\rho=\sqrt{z\overline{z}}=\sqrt{x^2+y^2}$ e l'\emph{argomento} $\displaystyle\theta=\arctan{\frac{y}{x}}$. \`E quindi possibile eseguire la trasformazione:
+            \begin{equation*}
+            \begin{cases}
+                x=\rho\cos\theta\\
+                y=\rho\sin\theta
+            \end{cases}
+            \end{equation*}
+            da cui $z=\rho\qty(\cos\theta+i\sin\theta)$, detta \emph{forma trigonometrica}. \par Adesso consideriamo il numero $\rho e^{i\theta}$ e scriviamolo attraverso la serie esponenziale: 
+            \begin{multline*}
+                \rho e^{i\theta}=\rho\sum_{n=0}^{+\infty}\frac{\qty(i\theta)^n}{n!}=\rho\qty[\sum_{n=0}^{+\infty}\frac{\qty(i\theta)^{2n}}{\qty(2n)!}+\sum_{n=0}^{+\infty}\frac{\qty(i\theta)^{2n+1}}{\qty(2n+1)!}]=\\ =\rho\qty[\sum_{n=0}^{+\infty}\qty(-1)^n\frac{\theta^{2n}}{\qty(2n)!}+i\sum_{n=0}^{+\infty}\qty(-1)^n\frac{\theta^{2n+1}}{\qty(2n+1)!}]=\rho\qty(\cos\theta+i\sin\theta)
+            \end{multline*}    
+            dove si \`e usato $i^{2n}=\qty(-1)^n$ e $i^{2n+1}=i\qty(-1)^n$. Osserviamo dunque che esiste l'uguaglianza tra la forma trigonometrica e quella che chiamiamo \emph{forma esponenziale}; la relazione che le lega \`e detta \emph{Identit\`a di Eulero}.
+        \subsection{Formule di Eulero}
+            Ricaviamo ora due relazioni utili partendo dall'Identit\`a appena otteuta. Consideriamo $z=\rho e^{i\theta}=\rho\qty(\cos\theta+i\sin\theta)$ e il suo coniugato $\overline{z}=\rho e^{-i\theta}=\rho\qty(\cos\theta-i\sin\theta)$.
+            Da semplici conti:
+            \begin{align*}
+                z+\overline{z}=\rho e^{i\theta}+\rho e^{-i\theta}&=2\rho\cos\theta \iff \cos\theta=\frac{e^{i\theta}+e^{-i\theta}}{2}\\
+                z-\overline{z}=\rho e^{i\theta}-\rho e^{-i\theta}&=2\rho i\sin\theta \iff \sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i}\\
+            \end{align*}
+    \section{Operazioni coi numeri complessi}
+    Vediamo brevemente come eseguire facilmente le operazioni algebriche pi\`u importanti in $\C$.
+        \subsection{Somma e prodotto}
+            Per sommare e sottrare due numeri complessi \`e utile fare riferimento alla loro forma algebrica, infatti la loro somma si esegue per componenti, esattamente come per i vettori di $\R^2$. $$z_1=x_1+iy_1\ ,\ z_2=x_2+iy_2$$ $$z_1\pm z_2=\qty(x_1\pm x_2)+i\qty(y_1\pm y_2)$$ Il prodotto si pu\`o eseguire come prodotto di binomi, ricordando $i^2=-1$: $$z_1z_2=\qty(x_1+iy_1)\qty(x_2+iy_2)=x_1x_2-y_1y_2+i\qty(x_1y_2+x_2y_1)$$
+            Tuttavia, pu\`o essere pi\`u utile ricondursi alla forma esponenziale, in quanto, detti $z_1=\rho_1e^{i\theta}$, $z_2=\rho_2e^{i\phi}$, si ha: $$z_1z_2=\rho_1e^{i\theta}\rho_2e^{i\phi}=\rho_1\rho_2e^{i\qty(\theta+\phi)}$$ $$\frac{z_1}{z_2}=\rho_1e^{i\theta}\frac{1}{\rho_2}e^{-i\phi}=\frac{\rho_1}{\rho_2}e^{i\qty(\theta-\phi)}$$ Da cui segue subito l'elevamento a potenza: $$z^r=\qty(\rho e^{i\theta})^r=\rho^re^{ir\theta}$$
+}

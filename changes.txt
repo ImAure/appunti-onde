@@ -1,7 +1,0 @@
-FIXED {
-[DATA] Oggetto
-}
-
-PENDING {
-Oscillatore anisotropo - cambio di coordinate può essere fatto più compatto
-}

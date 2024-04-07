@@ -16,6 +16,9 @@
 \usepackage{enumitem}
 
 \usepackage{xurl}
+\usepackage[backend=bibtex,style=numeric-comp]{biblatex}
+
+\addbibresource{bibliography.bib}
 
 % ---- REIMPOSTAZIONI ----
 \renewcommand\thesection{\arabic{section}}
@@ -35,6 +38,7 @@
 \newcommand{\C}{\mathbb{C}}
 
 \newcommand{\func}[3]{#1:#2\rightarrow#3}
+\newcommand{\mycomment}[1]{}
 
 \begin{document}
 \input{misc/title}
@@ -50,5 +54,7 @@
 \appendix
 \input{chapters/appA}
 
+
+\printbibliography
 
 \end{document}
