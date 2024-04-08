@@ -17,6 +17,47 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{Focardi2014-wy}{book}{}
+    \name{author}{4}{}{%
+      {{hash=FS}{%
+         family={Focardi},
+         familyi={F\bibinitperiod},
+         given={Sergio},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MIG}{%
+         family={Massa},
+         familyi={M\bibinitperiod},
+         given={Ignazio\bibnamedelima Giacomo},
+         giveni={I\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+      {{hash=UA}{%
+         family={Uguzzoni},
+         familyi={U\bibinitperiod},
+         given={Arnaldo},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=VM}{%
+         family={Villa},
+         familyi={V\bibinitperiod},
+         given={Mauro},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {it}%
+    }
+    \strng{namehash}{FS+1}
+    \strng{fullhash}{FSMIGUAVM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Fisica generale. Meccanica e termodinamica}
+    \field{month}{01}
+    \field{year}{2014}
+  \endentry
+
   \entry{Goldstein2005-jd}{book}{}
     \name{author}{3}{}{%
       {{hash=GH}{%
