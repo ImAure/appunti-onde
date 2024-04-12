@@ -17,6 +17,35 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{Di_Fazio2013-vk}{book}{}
+    \name{author}{2}{}{%
+      {{hash=DFG}{%
+         family={Di\bibnamedelima Fazio},
+         familyi={D\bibinitperiod\bibinitdelim F\bibinitperiod},
+         given={Giuseppe},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=ZP}{%
+         family={Zamboni},
+         familyi={Z\bibinitperiod},
+         given={Pietro},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {it}%
+    }
+    \strng{namehash}{DFGZP1}
+    \strng{fullhash}{DFGZP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{60\bibrangedash 65}
+    \field{title}{Analisi matematica Uno}
+    \field{year}{2013}
+  \endentry
+
   \entry{Focardi2014-wy}{book}{}
     \name{author}{4}{}{%
       {{hash=FS}{%

@@ -14,6 +14,7 @@
 \usepackage{tikz}
 % \usepackage{ntheorem}
 \usepackage{enumitem}
+\usepackage{titlesec}
 
 \usepackage{xurl}
 \usepackage[backend=bibtex,style=numeric-comp]{biblatex}
@@ -21,13 +22,12 @@
 \addbibresource{bibliography.bib}
 
 % ---- REIMPOSTAZIONI ----
-\renewcommand\thesection{\arabic{section}}
-\numberwithin{equation}{chapter}
+\renewcommand\thesection{\arabic{section}} % Rimuove il numero del capitolo dal numero della sezione %
+\numberwithin{equation}{chapter} % Aggiunge il numero del capitolo all'equazione %
+\let\MakeUppercase\relax % Rende gli header in ogni pagina (capitolo - paragrafo) NON Caps %
+% \titleformat{\chapter}
 
 % ---- AMBIENTI PERSONALI ----
-% \newenvironment{definition}[2]{}
-% \newtheorem{theorem}{Teorema}
-% \newtheorem{definition}{Definizione}
 \newtheorem{lemma}{Lemma}[chapter]
 
 % ---- COMANDI PERSONALI ----
@@ -36,6 +36,7 @@
 \newcommand{\E}{\mathbb{E}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\LL}{\mathcal{L}}
 
 \newcommand{\func}[3]{#1:#2\rightarrow#3}
 \newcommand{\mycomment}[1]{}
@@ -50,9 +51,11 @@
 
 \pagenumbering{arabic}
 \input{chapters/chapter1}
+\input{chapters/chapter2}
 
 \appendix
 \input{chapters/appA}
+\input{chapters/appB}
 
 
 \printbibliography
