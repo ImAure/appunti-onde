@@ -2,7 +2,6 @@
 \babel@toc {italian}{}\relax 
 \contentsline {chapter}{\numberline {1}L'Oscillatore Armonico}{1}{}%
 \contentsline {section}{\numberline {1}Introduzione}{1}{}%
-\contentsline {paragraph}{armando}{1}{}%
 \contentsline {section}{\numberline {2}Oscillatore Armonico Unidimensionale}{2}{}%
 \contentsline {section}{\numberline {3}Oscillatore Armonico Bidimensionale}{2}{}%
 \contentsline {subsection}{\numberline {3.1}Oscillatore isotropo}{3}{}%
@@ -15,10 +14,12 @@
 \contentsline {subsection}{\numberline {4.2}Tre masse con condizioni periodiche al contorno}{7}{}%
 \contentsline {section}{\numberline {5}Oscillatore a $N$ Gradi di Libert\`a}{8}{}%
 \contentsline {subsection}{\numberline {5.1}Ricerca dei modi normali di oscillazione}{8}{}%
-\contentsline {subsection}{\numberline {5.2}Risoluzione delle equazioni del moto}{12}{}%
-\contentsline {subsection}{\numberline {5.3}Energia cinetica e Lagrangiana}{13}{}%
-\contentsline {subsection}{\numberline {5.4}Relazione di dispersione}{13}{}%
-\contentsline {subsection}{\numberline {5.5}Il caso al limite del continuo}{13}{}%
+\contentsline {subsubsection}{Invertibilit\`a}{10}{}%
+\contentsline {subsubsection}{Diagonalizzazione del potenziale}{10}{}%
+\contentsline {subsubsection}{Relazione di dispersione}{12}{}%
+\contentsline {subsection}{\numberline {5.2}Energia cinetica e Lagrangiana}{12}{}%
+\contentsline {subsection}{\numberline {5.3}Risoluzione delle equazioni del moto}{13}{}%
+\contentsline {section}{\numberline {6}Il caso continuo}{14}{}%
 \contentsline {chapter}{\numberline {2}L'Equazione delle Onde}{15}{}%
 \contentsline {subsection}{\numberline {0.1}Onde piane monocromatiche}{15}{}%
 \contentsline {chapter}{\numberline {A}Cenni sui Numeri Complessi}{17}{}%

@@ -13,7 +13,7 @@
 % [ ] Laurearsi
 % [ ] Spazio di Bruillon?
 % [ ] Aggiustare dimostrazione catena con q_m e N=2p+1
-% [ ] Relazione di dispersione?
+% [ ] Sposstare relazione di dispersione e prima parte eq moto nella sottosez precedente
 % [x] Spezzare il calcolo diagon. pot. per N molle (sviluppare \zeta_n^2 a parte e poi mettere nella sommatoria)
 \chapter{L'Oscillatore Armonico}\label{ch:1}
     \section{Introduzione}
@@ -153,63 +153,54 @@
                 $$\sum_{n=0}^{N-1} e^{iqx_n}=\sum_{n=0}^{N-1} e^{iqna}=\sum_{n=0}^{N-1}\qty(e^{iqa})^n=\frac{1-e^{iqNa}}{1-e^{iqa}}$$
             essendo il termine generale della successione delle somme parziali di una serie geometrica di ragione $e^{iqa}$. Sostituendo la \eqref{eq:q} si vede subito che tale somma risulta $0$. \\ Allo stesso modo si prova la \eqref{eq:delta:2}.
         \end{proof}
-        \par Verifichiamo adesso che le trasformazioni \eqref{eq:cambio:1} e \eqref{eq:cambio:2} sono l'una l'inversa dell'altra mostrando che la loro composizione restituisce l'identit\`a: $$\zeta_n=\frac{1}{\sqrt{N}}\sum_{q}e^{iqx_n}\qty(\frac{1}{\sqrt{N}}\sum_{p=0}^e{N-1}e^{-iqx_p}\zeta_p)=\frac{1}{N}\sum_{p,q}e^{iq\qty(x_n-x_p)}\zeta_p.$$ Poich\'e $\zeta_p$ non dipende da $q$, \`e possibile estrarlo dalla rispettiva sommatoria:
-            $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\qty[\sum_q e^{iq\qty(x_n-x_p)}]$$
-        dove per il Lemma \ref{lm:delta} si pu\`o scrivere:
-            $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\delta_{n,p}=\zeta_n$$
-        che \`e appunto l'identit\`a. \par Ci chiediamo quindi se questo cambio di coordinate ci fornisca i modi normali di oscillazione del sistema, diagonalizzando \eqref{eq:potenziale:2}. Studiamo la seguente quantit\`a:
-        \begin{multline*}
-            \zeta_n^2=\frac{1}{N}\qty(\sum_q e^{iqx_n}Q_q)^2=\frac{1}{N}\qty(\sum_q e^{iqx_n}Q_q)\Biggl(\sum_{q'} e^{iq'x_n}Q_{q'}\Biggr)=\\=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}e^{i\qty(q+q')x_n},
-        \end{multline*}
-        sommiamo quindi su $n$ e applichiamo ancora il Lemma \ref{lm:delta} dopo aver raccolto i termini comuni: $$\sum_n\zeta_n^2=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}\sum_ne^{i\qty(q+q')x_n}=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}N\delta_{q,-q'}=\sum_qQ_qQ_{-q}.$$
-        \par Prima di proseguire ulteriormente, facciamo delle considerazioni utili. Ricordiamo che le $\zeta_n$ sono funzioni reali e quindi deve essere $\zeta_n^*=\zeta_n$.\footnote{Con $\zeta_n^*$ indichiamo il complesso coniugato di $\zeta_n$} Inoltre, dalla \eqref{eq:cambio:1}, possiamo ricavare che $\zeta_n^*$ ha forma: $$\zeta_n^*=\frac{1}{\sqrt{N}}\sum_qe^{iqx_n}Q_q^*=\frac{1}{\sqrt{N}}\sum_{-q}e^{iqx_n}Q_{-q}^*,$$ dove, nello scrivere la seconda uguaglianza, \`e stato sfruttato il fatto che l'indice $q$ \`e saturato e quindi nulla vieta di `cambiargli il nome' in $-q$. Segue naturalmente:
-        \begin{equation}
-            \zeta_n=\zeta_n^*\ \iff\ Q_q=Q_{-q}^*\ \iff\ Q_{-q}=Q_q^*.
-            \label{eq:QQ}
-        \end{equation}
-        Supponendo $Q=\alpha\qty(q)+i\beta\qty(q)$ e sostituendo quanto trovato nei conti precedenti si ottiene:
-        \begin{equation}
-            \sum_n\zeta_n^2=\sum_qQ_qQ_q^*=\sum_q\qty[\alpha^2\qty(q)+\beta^2\qty(q)]
-            \label{eq:sommazetaquadro}
-        \end{equation}
-        \par A questo punto possiamo scrivere per esteso il potenziale, richiamando la \eqref{eq:potenziale:2}:
-            $$V=\frac{1}{2}m\omega^2\sum_n\qty(\zeta_{n+1}-\zeta_n)^2$$
-        Valutiamo la quantit\`a tra parentesi:
-            $$\zeta_{n+1}-\zeta_n=\frac{1}{\sqrt{N}}\sum_qQ_q\qty(e^{iqx_{n+1}}-e^{iqx_n})=\frac{1}{\sqrt{N}}\sum_qQ_qe^{iqx_n}\qty(e^{iqa}-1)$$
-        e inseriamola nel potenziale $V$ che, una volta sviluppato il quadrato similmente a prima e applicata la \eqref{eq:QQ}, diventa:
-        \begin{multline*}
-            V=\frac{1}{2}\frac{m\omega^2}{N}\sum_n\sum_{q,q'}e^{iqx_n}\qty(e^{iqa}-1)e^{iq'x_n}\bigl(e^{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_{q,q'}\delta{q,-q'}\qty(e^{iqa}-1)\bigl(e^{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)Q_qQ_{-q}=\\=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)Q_qQ_q^*
-        \end{multline*}
-        Da cui l'espressione pi\`u sintetica ed elegante del potenziale:
-        \begin{equation}
-            V=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)\norm{Q_q}^2
-        \end{equation}
-        che non \`e altro che una forma quadratica nelle variabili $Q_q$ la cui matrice dei coefficienti \`e diagonale e contiene gli autovalori $\qty(e^{iqa}-1)\qty(e^{-iqa}-1)$, ciascuno associato all'autovettore $Q_q$ corrispondente. Chiamiamo i vettori di base di queste nuove coordinate, $Q_q$, \emph{modi normali di oscillazione} del sistema. Queste coordinate in cui il potenziale \`e diagonale costuituiscono diversi `modi' di oscillare del sistema fisico, ciascuno linearmente indipendente dagli altri. Conseguenza di ci\`o \`e che qualunque moto periodico del sistema pu\`o essere espresso come combinazione lineare dei modi normali.
-    \subsection{Risoluzione delle equazioni del moto}
-        Per semplificare la forma del potenziale, moltiplichiamo e dividiamo il risultato ottenuto per $\displaystyle 4i^2e^{i\frac{qa}{2}}$. Applicando le formule di Eulero otteniamo:
-            $$V=\frac{-4}{2}m\omega^2\sum_q\frac{e^{i\frac{qa}{2}}-e^{-i\frac{qa}{2}}}{2i}\frac{e^{-i\frac{qa}{2}}-e^{i\frac{qa}{2}}}{2i}\norm{Q_q}^2=2m\omega^2\sum_q\sin^2\qty(\frac{qa}{2})Q_q^2.$$
-        Facendo la posizione:
-        \begin{equation}
-            \Omega_q=2\omega\sin\qty(\frac{qa}{2}),
-            \label{eq:omega:1}
-        \end{equation}
-        possiamo scrivere le $N$ equazioni del moto:
-            $$-\pdv{V}{Q_q}=m\ddot{Q}_q\ \iff\ \ddot{Q}_q=4\omega^2\sin^2\qty(\frac{qa}{2})Q_q=-\Omega_q^2Q_q,$$
-        che hanno soluzioni del tipo $\displaystyle Q_q\qty(t)=e^{\pm i\Omega_qt}$. Le generiche soluzioni, presi $A_q^\pm\in\C$, possono essere scritte come: $\displaystyle Q_q\qty(t)=A_q^+e^{i\Omega_qt}+A_q^-e^{-i\Omega_qt}$ e, ponendo $\displaystyle A_q^\pm=\rho_q^\pm e^{i\phi_q^\pm}$:
-            $$Q_q\qty(t)=\rho_q^+e^{i\qty(\Omega_qt+\phi_q^+)}+\rho_q^-e^{i\qty(-\Omega_qt+\phi_q^-)}.$$
-        \par Proviamo a sostituire quest'ultima relazione nella \eqref{eq:cambio:1}:
-            $$\zeta_n\qty(t)=\frac{1}{\sqrt{N}}\sum_q\qty[\rho_q^+e^{i\qty(qx_n+\Omega_qt+\phi_q^+)}+\rho_q^-e^{i\qty(qx_n-\Omega_qt+\phi_q^-)}].$$
-        Ricordiamo adesso che stiamo sommando su un intervallo simmetrico e quindi a ogni valore di $q$ corrisponde un $-q$. Per la \eqref{eq:QQ}, possiamo riscrivere la somma per $q\geq 0$, e tenere conto dei termini con indice $-q$ separatamente. Tuttavia facendo ci\`o: 
-        \begin{itemize}
-            \item $\rho_{-q}^\pm=\rho_{q}^\pm$ in quanto \`e il modulo di un numero complesso ed \`e uguale al modulo del suo coniugato;
-            \item $\phi_{-q}^-=-\phi_q^-$ in quanto l'argomento di un numero complesso cambia segno passando al coniugato;
-            \item $\Omega_{-q}=-\Omega_q$ in quanto $\Omega_q$ dipende dal seno di $q$, che \`e una funzione dispari.
-        \end{itemize}
-        Segue che ognuno dei due esponenziali della sommatoria si spezza in: $$\rho_q^\pm e^{i\qty(qx_n\pm\Omega_qt+\phi_q^\pm)}+\rho_{q}^\pm e^{i\qty(-qx_n\mp\Omega_qt-\phi_{q}^\pm)},$$ che non \`e altro che la somma di due complessi coniugati, la quale restituisce la parte reale del numero complesso. In definitiva, tenuto conto di ci\`o, la \eqref{eq:cambio:1} diventa:
-        \begin{equation}
-            \zeta_n\qty(t)=\frac{1}{\sqrt{N}}\sum_q\qty[\rho_q^+\cos\qty(qx_n+\Omega_qt+\phi_q^+)+\rho_q^-\cos\qty(qx_n-\Omega_qt+\phi_q^-)]
-        \end{equation}
-        \par Possiamo notare che la soluzione delle equazioni del moto \`e formata da una sovrapposizione di \emph{onde piane monocromatiche}, a cui verr\`a prestata pi\`u attenzioni nel corso del Capitolo \ref{ch:2}.
+        \subsubsection{Invertibilit\`a}
+            Verifichiamo adesso che le trasformazioni \eqref{eq:cambio:1} e \eqref{eq:cambio:2} sono l'una l'inversa dell'altra mostrando che la loro composizione restituisce l'identit\`a: $$\zeta_n=\frac{1}{\sqrt{N}}\sum_{q}e^{iqx_n}\qty(\frac{1}{\sqrt{N}}\sum_{p=0}^e{N-1}e^{-iqx_p}\zeta_p)=\frac{1}{N}\sum_{p,q}e^{iq\qty(x_n-x_p)}\zeta_p.$$ Poich\'e $\zeta_p$ non dipende da $q$, \`e possibile estrarlo dalla rispettiva sommatoria:
+                $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\qty[\sum_q e^{iq\qty(x_n-x_p)}]$$
+            dove per il Lemma \ref{lm:delta} si pu\`o scrivere:
+                $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\delta_{n,p}=\zeta_n$$
+            che \`e appunto l'identit\`a.
+        \subsubsection{Diagonalizzazione del potenziale}
+            Ci chiediamo adesso se questo cambio di coordinate ci fornisca i modi normali di oscillazione del sistema, diagonalizzando il potenziale \eqref{eq:potenziale:2}. Studiamo la seguente quantit\`a:
+            \begin{multline*}
+                \zeta_n^2=\frac{1}{N}\qty(\sum_q e^{iqx_n}Q_q)^2=\frac{1}{N}\qty(\sum_q e^{iqx_n}Q_q)\Biggl(\sum_{q'} e^{iq'x_n}Q_{q'}\Biggr)=\\=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}e^{i\qty(q+q')x_n},
+            \end{multline*}
+            sommiamo quindi su $n$ e applichiamo ancora il Lemma \ref{lm:delta} dopo aver raccolto i termini comuni: $$\sum_n\zeta_n^2=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}\sum_ne^{i\qty(q+q')x_n}=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}N\delta_{q,-q'}=\sum_qQ_qQ_{-q}.$$
+            \par Prima di proseguire ulteriormente, facciamo delle considerazioni utili. Ricordiamo che le $\zeta_n$ sono funzioni reali e quindi deve essere $\zeta_n^*=\zeta_n$.\footnote{Con $\zeta_n^*$ indichiamo il complesso coniugato di $\zeta_n$} Inoltre, dalla \eqref{eq:cambio:1}, possiamo ricavare che $\zeta_n^*$ ha forma: $$\zeta_n^*=\frac{1}{\sqrt{N}}\sum_qe^{iqx_n}Q_q^*=\frac{1}{\sqrt{N}}\sum_{-q}e^{iqx_n}Q_{-q}^*,$$ dove, nello scrivere la seconda uguaglianza, \`e stato sfruttato il fatto che l'indice $q$ \`e saturato e quindi nulla vieta di `cambiargli il nome' in $-q$. Segue naturalmente:
+            \begin{equation}
+                \zeta_n=\zeta_n^*\ \iff\ Q_q=Q_{-q}^*\ \iff\ Q_{-q}=Q_q^*.
+                \label{eq:QQ}
+            \end{equation}
+            Supponendo $Q=\alpha\qty(q)+i\beta\qty(q)$ e sostituendo quanto trovato nei conti precedenti si ottiene:
+            \begin{equation}
+                \sum_n\zeta_n^2=\sum_qQ_qQ_q^*=\sum_q\qty[\alpha^2\qty(q)+\beta^2\qty(q)]
+                \label{eq:sommazetaquadro}
+            \end{equation}
+            \par A questo punto possiamo scrivere per esteso il potenziale, richiamando la \eqref{eq:potenziale:2}:
+                $$V=\frac{1}{2}m\omega^2\sum_n\qty(\zeta_{n+1}-\zeta_n)^2$$
+            Valutiamo la quantit\`a tra parentesi:
+                $$\zeta_{n+1}-\zeta_n=\frac{1}{\sqrt{N}}\sum_qQ_q\qty(e^{iqx_{n+1}}-e^{iqx_n})=\frac{1}{\sqrt{N}}\sum_qQ_qe^{iqx_n}\qty(e^{iqa}-1)$$
+            e inseriamola nel potenziale $V$ che, una volta sviluppato il quadrato similmente a prima e applicata la \eqref{eq:QQ}, diventa:
+            \begin{multline*}
+                V=\frac{1}{2}\frac{m\omega^2}{N}\sum_n\sum_{q,q'}e^{iqx_n}\qty(e^{iqa}-1)e^{iq'x_n}\bigl(e^{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_{q,q'}\delta{q,-q'}\qty(e^{iqa}-1)\bigl(e^{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)Q_qQ_{-q}=\\=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)Q_qQ_q^*
+            \end{multline*}
+            Da cui la nuova espressione di $V$:
+            \begin{equation}
+                V=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)\norm{Q_q}^2
+            \end{equation}
+            che non \`e altro che una forma quadratica nelle variabili $Q_q$ la cui matrice dei coefficienti \`e diagonale e contiene gli autovalori $\qty(e^{iqa}-1)\qty(e^{-iqa}-1)$, ciascuno associato all'autovettore $Q_q$ corrispondente. Chiamiamo i vettori di base di queste nuove coordinate, $Q_q$, \emph{modi normali di oscillazione} del sistema. Queste coordinate in cui il potenziale \`e diagonale costuituiscono diversi `modi' di oscillare del sistema fisico, ciascuno linearmente indipendente dagli altri. Conseguenza di ci\`o \`e che qualunque moto periodico del sistema pu\`o essere espresso come combinazione lineare dei modi normali. \par Possiamo maneggiare ulteriormente la forma del potenziale moltiplicando e dividendo il risultato ottenuto per $\displaystyle 4i^2e^{i\frac{qa}{2}}$. Applicando le formule di Eulero otteniamo:
+                $$V=\frac{-4}{2}m\omega^2\sum_q\frac{e^{i\frac{qa}{2}}-e^{-i\frac{qa}{2}}}{2i}\frac{e^{-i\frac{qa}{2}}-e^{i\frac{qa}{2}}}{2i}\norm{Q_q}^2=2m\omega^2\sum_q\sin^2\qty(\frac{qa}{2})Q_q^2.$$
+            Notiamo infine che ponendo:
+            \begin{equation}
+                \Omega_q=2\omega\sin\qty(\frac{qa}{2}),
+                \label{eq:dispersione:1}
+            \end{equation}
+            il potenziale assume la forma pi\`u compatta ed elegante:
+            \begin{equation}
+                V=\frac{1}{2}m\sum_q\Omega_q^2Q_q^2.
+                \label{eq:potenziale:3}
+            \end{equation}
+        \subsubsection{Relazione di dispersione}
+            \`E opportuno soffermarsi un istante a osservare la posizione \eqref{eq:dispersione:1}. Essa prende il nome di \emph{relazione di dispersione} e ci permette di esprimere la frequenza di oscillazione di ciacun modo normale in funzione del vettore d'onda $q$ associato. In questo caso notiamo che la relazione non \`e lineare, ma pu\`o essere approssimata come tale per i $q$ prossimi allo $0$ o se il passo $a$ \`e sufficientemente piccolo da rendere infinitesimo l'argomento del seno. Qualora ci\`o fosse possibile, la relazione di dispersione assumerebbe la forma $\Omega_q=\omega aq$, dove la quantit\`a $\omega a$ ha le dimensioni di una velocit\`a. \par L'argomento sar\`a ripreso pi\`u approfonditamente nel paragrafo \ref{s:casocontinuo} sullo studio del limite per $a\to 0$.
     \subsection{Energia cinetica e Lagrangiana}
         Applichiamo al sistema la definizione di energia cinetica che, essendo invariante per rototraslazioni, deve risultare uguale sia nelle $\dot{\zeta}_n$ che nelle $\dot{Q}_q$. Consideriamo:
             $$\dot{\zeta}_n=\frac{1}{\sqrt{N}}\sum_qe^{iqx_n}\dot{Q}_q.$$
@@ -220,24 +211,36 @@
             \LL=T-V=\frac{1}{2}m\sum_q\qty(\dot{Q}_q^2-\Omega_q^2Q_q^2).
             \label{eq:mollelagrangiana}
         \end{equation}
-    \subsection{Relazione di dispersione}
-        
-    \subsection{Il caso al limite del continuo}
-        Avevamo posto $L=Na$. Vediamo cosa succede per $a\rightarrow 0$ e $N\rightarrow+\infty$. A tale scopo \`e utile definire la nuova quantit\`a:
-            $$\tilde{Q}_q=\frac{Q_q}{\sqrt{N}}=\frac{1}{N}\sum_{n=1}^Ne^{-iqx_n}\zeta_n,$$
-        a partire dalla \eqref{eq:cambio:2}. Se dividiamo e moltiplichiamo per $a$ quello che otteniamo \`e:
-            $$\tilde{Q}_q\frac{1}{Na}\sum_{n=1}^Ne^{-iqx_n}\zeta_na$$
-        che al limite del continuo si trasforma in un integrale:
+    \subsection{Risoluzione delle equazioni del moto}
+        Scriviamo ora le $N$ equazioni del moto sostituendo la \eqref{eq:mollelagrangiana} nelle equazioni di Eulero-Lagrange:
+            $$\lagrange{\LL}{Q_q}{\dot{Q}_q}=0\ \implies\ \ddot{Q}_q=-\Omega_q^2Q_q,$$
+        che ammettono soluzioni del tipo $\displaystyle Q_q\qty(t)=e^{\pm i\Omega_qt}$. Le generiche soluzioni, presi $A_q^\pm\in\C$, possono essere scritte come: $\displaystyle Q_q\qty(t)=A_q^+e^{i\Omega_qt}+A_q^-e^{-i\Omega_qt}$ e, ponendo $\displaystyle A_q^\pm=\rho_q^\pm e^{i\phi_q^\pm}$:
+            $$Q_q\qty(t)=\rho_q^+e^{i\qty(\Omega_qt+\phi_q^+)}+\rho_q^-e^{i\qty(-\Omega_qt+\phi_q^-)}.$$
+        \par Proviamo a sostituire quest'ultima relazione nella \eqref{eq:cambio:1}:
+            $$\zeta_n\qty(t)=\frac{1}{\sqrt{N}}\sum_q\qty[\rho_q^+e^{i\qty(qx_n+\Omega_qt+\phi_q^+)}+\rho_q^-e^{i\qty(qx_n-\Omega_qt+\phi_q^-)}].$$
+        Ricordiamo adesso che stiamo sommando su un intervallo simmetrico e quindi a ogni valore di $q$ corrisponde un $-q$. Per la \eqref{eq:QQ}, possiamo riscrivere la somma per $q\geq 0$, e tenere conto dei termini con indice $-q$ separatamente. Tuttavia facendo ci\`o: 
+        \begin{itemize}
+            \item $\rho_{-q}^\pm=\rho_{q}^\pm$ in quanto \`e il modulo di un numero complesso ed \`e uguale al modulo del suo coniugato;
+            \item $\phi_{-q}^-=-\phi_q^-$ in quanto l'argomento di un numero complesso cambia segno passando al coniugato;
+            \item $\Omega_{-q}=-\Omega_q$ in quanto $\Omega_q$ dipende dal seno di $q$, che \`e una funzione dispari.
+        \end{itemize}
+        Segue che ognuno dei due esponenziali della sommatoria si spezza in:
+            $$\rho_q^\pm e^{i\qty(qx_n\pm\Omega_qt+\phi_q^\pm)}+\rho_{q}^\pm e^{i\qty(-qx_n\mp\Omega_qt-\phi_{q}^\pm)},$$
+        che non \`e altro che la somma di due complessi coniugati, la quale restituisce la parte reale del numero complesso. In definitiva, tenuto conto di ci\`o, la \eqref{eq:cambio:1} diventa:
         \begin{equation}
-            \tilde{Q}_q=\frac{1}{L}\int\limits_0^Le^{-iqx}\zeta\qty(x)\dd{x}.
-            \label{eq:cambiocontinuo:1}
+            \zeta_n\qty(t)=\frac{1}{\sqrt{N}}\sum_q\qty[\rho_q^+\cos\qty(qx_n+\Omega_qt+\phi_q^+)+\rho_q^-\cos\qty(qx_n-\Omega_qt+\phi_q^-)]
         \end{equation}
-        \par Per quanto riguarda la trasformazione inversa facciamo riferimento alla \eqref{eq:cambio:1}, riscrivendola in funzione delle $\tilde{Q}_q$:
-            $$\zeta_n=\sum_qe^{iqx_n}\tilde{Q}_q.$$
-        Ricordando che le $q$ dipendono da $m$ per la \eqref{eq:q} e per $N\rightarrow+\infty$ anche il numero di $m$ su cui sommare diventa infinito, la somma diventa:
-        \begin{equation}
-            \zeta\qty(x)=\sum_{m=-\infty}^{+\infty}e^{iq_mx}\tilde{Q}_{q_m}
-            \label{eq:cambiocontinuo:2}
-        \end{equation}
-        Notiamo con relativamente poca sorpresa che le due relazioni di trasformazione che abbiamo ricavato sono rispettivamente una trasformata e una serie di Fourier.
+        \par Possiamo notare che la soluzione delle equazioni del moto \`e formata da una sovrapposizione di \emph{onde piane monocromatiche}, a cui verr\`a prestata pi\`u attenzioni nel corso del Capitolo \ref{ch:2}.
+\section{Il caso continuo}\label{s:casocontinuo}
+    Avevamo posto $L=Na$. Vediamo cosa succede per $a\rightarrow 0$ e $N\rightarrow+\infty$. A tale scopo \`e utile definire la nuova quantit\`a $\tilde{Q_q}$, a partire dalla \eqref{eq:cambio:2}:
+        $$\tilde{Q}_q=\frac{Q_q}{\sqrt{N}}=\frac{1}{N}\sum_{n=1}^Ne^{-iqx_n}\zeta_n,$$
+    Moltiplicando e dividendo per $a$ e passando al limite quello che otteniamo \`e:
+        $$\tilde{Q}_q=\frac{1}{Na}\sum_{n=1}^Ne^{-iqx_n}\zeta_na\quad\underset{N\to\infty}{\overset{a\to 0}{\implies}}\quad\tilde{Q}_q=\frac{1}{L}\int\limits_0^Le^{-iqx}\zeta\qty(x)\dd{x}.$$
+    \par Per quanto riguarda la trasformazione inversa facciamo riferimento alla \eqref{eq:cambio:1}, riscrivendola in funzione delle $\tilde{Q}_q$:
+        $$\zeta_n=\sum_qe^{iqx_n}\tilde{Q}_q.$$
+    Ricordando che le $q$ dipendono da $m$ per la \eqref{eq:q} e per $N\rightarrow+\infty$ anche il numero di $m$ su cui sommare diventa infinito, la somma diventa una serie di Fourier:
+    \begin{equation}
+        \zeta\qty(x)=\sum_{m=-\infty}^{+\infty}e^{iq_mx}\tilde{Q}_{q_m}
+        \label{eq:cambiocontinuo:2}
+    \end{equation}
     
