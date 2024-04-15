@@ -13,21 +13,36 @@
 % [ ] Laurearsi
 % [ ] Spazio di Bruillon?
 % [ ] Aggiustare dimostrazione catena con q_m e N=2p+1
-% [ ] Sposstare relazione di dispersione e prima parte eq moto nella sottosez precedente
+% [x] Sposstare relazione di dispersione e prima parte eq moto nella sottosez precedente
 % [x] Spezzare il calcolo diagon. pot. per N molle (sviluppare \zeta_n^2 a parte e poi mettere nella sommatoria)
+% [ ] Condizioni iniziali eq moto N masse?
 \chapter{L'Oscillatore Armonico}\label{ch:1}
     \section{Introduzione}
     Dato un sistema fisico le cui configurazioni sono identificate dalle coordinate pure $q^\alpha$, dalla meccanica \`e noto che le configurazioni di equilibrio stabile si hanno in corrispondenza dei minimi del potenziale $V\qty(q^\alpha)$. Assumendo che $V$ sia una funzione almeno di classe $C^2$ e che ammetta minimo, \`e possibile effettuare una traslazione che ponga l'origine del S.d.R.\footnote{Sistema di riferimento} coincidente col punto di minimo e sviluppare in serie di Taylor/Mac Laurin il potenziale, arrestandosi al termine di secondo grado. Si ottiene dunque: $$V\qty(q^\alpha)=V\qty(\vb{0})+\pdv{V}{q^\alpha}\eval_{\vb{0}}q^\alpha+\frac{1}{2}\pdv{V}{q^\alpha}{q^\beta}\eval_{\vb{0}}q^\alpha q^\beta+R\qty(q^\alpha).$$ Ricordando che il potenziale \`e definito a meno di una costante additiva e che all'equilibrio $\displaystyle\pdv{V}{q^\alpha}\eval_{\vb{0}}=0$, e trascurando il termine infinitesimo, si pu\`o riscrivere il potenziale come:
     \begin{equation}
         V\qty(q^\alpha)=\frac{1}{2}\pdv{V}{q^\alpha}{q^\beta}\eval_{\vb{0}}q^\alpha q^\beta,
         \label{eq:potenziale:1}
-    \end{equation} che non \`e altro che una forma quadratica del tipo $\displaystyle\frac{1}{2}\underline{x}^\top H_V\qty(\vb{0})\underline{x}$, con $\underline{x}\in\R^n$ un punto e $H_V\qty(\vb{0})$ la matrice Hessiana di $V$ calcolata in $\vb{0}$. \par Ovviamente questo \`e soltanto un modello approssimato che pu\`o essere applicato in un intorno del minimo. Se ci si allontana troppo, le discordanze tra il modello e le misure che si riscontrano prendono il nome di \emph{effetti anarmonici}.
+    \end{equation} che non \`e altro che una forma quadratica del tipo $\displaystyle\frac{1}{2}\underline{x}^\top H_V\qty(\vb{0})\underline{x}$, con $\underline{x}\in\R^n$ un punto e $H_V\qty(\vb{0})$ la matrice Hessiana di $V$ calcolata in $\vb{0}$.
+    \par Ovviamente questo \`e soltanto un modello approssimato che pu\`o essere applicato in un intorno del minimo. Se ci si allontana troppo, le discordanze tra il modello e le misure che si riscontrano prendono il nome di \emph{effetti anarmonici}.
 \section{Oscillatore Armonico Unidimensionale}
-    Applichiamo quanto detto al caso unidimensionale. Siano $A\subseteq\R$ un aperto, $\func{V}{A}{\R}$ una funzione di classe $C^2$ e $x_0\in A$ un punto di minimo per $V$. La \eqref{eq:potenziale:1} diventa: $$V(x-x_0)=\frac{1}{2}\dv[2]{V}{x}\eval_{x_0}\qty(x-x_0)^2;$$ ponendo $u=x-x_0$, si effettua la traslazione che pone il punto di minimo nell'origine, per cui si ottiene: $$V(u)=\frac{1}{2}\dv[2]{V}{x}\eval_{0}u^2.$$ \par A questo punto risulta evidente la somiglianza con il potenziale della forza elastica. Ponendo $\displaystyle k=\dv[2]{V}{x}\eval_{x_0}$ e prendendone il "gradiente" (derivata prima) cambiato di segno, si ottiene l'espressione della forza elastica tramite la legge di Hooke: $$V\qty(u)=\frac{1}{2}ku^2\ \implies\ \vb{F\qty(\vb{u})}=-\dv{V}{x}\vu{i}=-k\vb{u},$$ da cui l'equazione del moto: $m\ddot{u}=-ku$, che \`e lineare omogenea del secondo ordine. \par Ponendo $\frac{k}{m}=\omega^2$, si pu\`o scrivere $\ddot{u}=-\omega^2u$, di cui due soluzioni linearmente indipendenti sono $\cos\qty(\omega t)$ e $\sin\qty(\omega t)$. L'integrale generale \`e quindi $$u\qty(t)=c_1\cos\qty(\omega t)+c_2\sin\qty(\omega t)$$ con $c_1,c_2\in\R$, o alternativamente, ponendo $c_1=A\cos\phi$ e $c_2=-A\sin\phi$, ancora con $A,\phi\in\R$, $$u\qty(t)=A\cos\qty(\omega t+\phi).$$ In tal caso, $A$ si dice \emph{ampiezza}, $\omega$ si dice \emph{pulsazione} o \emph{frequenza angolare} e $\omega t+\phi$ si dice \emph{fase}.
+    Applichiamo quanto detto al caso unidimensionale. Siano $A\subseteq\R$ un aperto, $\func{V}{A}{\R}$ una funzione di classe $C^2$ e $x_0\in A$ un punto di minimo per $V$. La \eqref{eq:potenziale:1} diventa:
+        $$V(x-x_0)=\frac{1}{2}\dv[2]{V}{x}\eval_{x_0}\qty(x-x_0)^2;$$
+    ponendo $u=x-x_0$, si effettua la traslazione che pone il punto di minimo nell'origine, per cui si ottiene:
+        $$V(u)=\frac{1}{2}\dv[2]{V}{x}\eval_{0}u^2.$$
+    \par A questo punto risulta evidente la somiglianza con il potenziale della forza elastica. Ponendo $\displaystyle k=\dv[2]{V}{x}\eval_{x_0}$ e prendendone il "gradiente" (derivata prima) cambiato di segno, si ottiene l'espressione della forza elastica tramite la legge di Hooke:
+        $$V\qty(u)=\frac{1}{2}ku^2\ \implies\ \vb{F\qty(\vb{u})}=-\dv{V}{x}\vu{i}=-k\vb{u},$$
+    da cui l'equazione del moto: $m\ddot{u}=-ku$, che \`e lineare omogenea del secondo ordine.
+    \par Ponendo $\frac{k}{m}=\omega^2$, si pu\`o scrivere $\ddot{u}=-\omega^2u$, di cui due soluzioni linearmente indipendenti sono $\cos\qty(\omega t)$ e $\sin\qty(\omega t)$. L'integrale generale \`e quindi $$u\qty(t)=c_1\cos\qty(\omega t)+c_2\sin\qty(\omega t)$$ con $c_1,c_2\in\R$, o alternativamente, ponendo $c_1=A\cos\phi$ e $c_2=-A\sin\phi$, ancora con $A,\phi\in\R$,
+        $$u\qty(t)=A\cos\qty(\omega t+\phi).$$
+    In tal caso, $A$ si dice \emph{ampiezza}, $\omega$ si dice \emph{pulsazione} o \emph{frequenza angolare} e $\omega t+\phi$ si dice \emph{fase}.
 \section{Oscillatore Armonico Bidimensionale}
     Proviamo ora passo passo ad aumentare il numero di dimensioni, per semplicit\`a iniziamo da 2. Quando vi \`e pi\`u di un grado di libert\`a, \`e importante distinguere i casi in base alle simmetrie che il sistema presenta. Se il potenziale \`e invariante per rotazioni, diciamo che l'oscillatore armonico \`e \emph{isotropo}, altrimenti lo diciamo \emph{anisotropo}.
     \subsection{Oscillatore isotropo}
-        Come prima, supponiamo di avere $\func{V}{A\subseteq{\R^2}}{\R}$, definito dalla legge: $$V\qty(x,y)=\frac{1}{2}m\omega^2\qty(x^2+y^2),$$ ove si \`e usata la relazione $k=m\omega^2$. Notiamo subito che il potenziale \`e invariante per rotazioni in quanto le curve equipotenziali sono circonferenze centrate nell'origine\footnote{Immaginiamo di trovarci gi\`a nel sistema di riferimento scelto in modo da collocare un punto di minimo di $V$ nell'origine, se cos\`i non fossoe, \`e sempre possibile ricondursi a quel caso con una traslazione}. Di conseguenza $V$ si spezza facilmente in: $$V\qty(x,y)=\frac{1}{2}m\omega^2x^2+\frac{1}{2}m\omega^2y^2$$ e derivando si ottengono quindi le due equazioni del moto gi\`a disaccoppiate.
+        Come prima, supponiamo di avere $\func{V}{A\subseteq{\R^2}}{\R}$, definito dalla legge:
+            $$V\qty(x,y)=\frac{1}{2}m\omega^2\qty(x^2+y^2),$$
+        ove si \`e usata la relazione $k=m\omega^2$. Notiamo subito che il potenziale \`e invariante per rotazioni in quanto le curve equipotenziali sono circonferenze centrate nell'origine\footnote{Immaginiamo di trovarci gi\`a nel sistema di riferimento scelto in modo da collocare un punto di minimo di $V$ nell'origine, se cos\`i non fossoe, \`e sempre possibile ricondursi a quel caso con una traslazione}. Di conseguenza $V$ si spezza facilmente in:
+            $$V\qty(x,y)=\frac{1}{2}m\omega^2x^2+\frac{1}{2}m\omega^2y^2$$
+        e derivando si ottengono quindi le due equazioni del moto gi\`a disaccoppiate.
         \begin{equation*}
         \begin{cases}
             \ddot{x}=-\omega^2x\\
@@ -36,30 +51,47 @@
         \end{equation*}
         le cui soluzioni sono nuovamente le funzioni $x\qty(t)=A_1\cos(\omega t+\phi_1)$ e $y\qty(t)=A_2\cos(\omega t+\phi_2)$, definite a meno di quattro costanti arbitrarie. Fissando le condizioni iniziali: $x\qty(0)$, $\dot{x}\qty(0)$, $y\qty(0)$ e $\dot{y}\qty(0)$, \`e possibile trovare l'unica soluzione del problema di Cauchy.
     \subsection{Oscillatore anisotropo}
-        Affrontiamo adesso il caso di un potenziale che non presenti simmetrie per rotazione, ad esempio: $$V\qty(x,y)=\frac{1}{2}m\omega^2x^2+\frac{1}{2}m\omega^2y^2+2\gamma xy,\quad\gamma>0.$$
+        Affrontiamo adesso il caso di un potenziale che non presenti simmetrie per rotazione, ad esempio:
+            $$V\qty(x,y)=\frac{1}{2}m\omega^2x^2+\frac{1}{2}m\omega^2y^2+2\gamma xy,\quad\gamma>0.$$
         \subsubsection{Diagonalizzazione del potenziale}
-            Come \`e noto dalla \eqref{eq:potenziale:1}, \`e possibile riscrivere il potenziale come forma quadratica: $$\frac{1}{2}m\omega^2\mqty(x&y)\mqty[1 & \frac{\gamma}{m\omega^2} \\ \frac{\gamma}{m\omega^2} & 1]\mqty(x\\y).$$ Poich\`e la matrice dei coefficienti \`e simmetrica, per il teorema spettrale \`e diagonalizzabile ed esiste quindi un cambio di coordinate che pone la forma quadratica in forma canonica, disaccoppiando di conseguenza le equazioni del moto. \par Le nuove coordinate sono quelle identificate da una base (ortonormale) di autovettori della matrice, cerchiamo quindi gli zeri del polinomio caratteristico: $$P\qty(\lambda)=\det\mqty[1-\lambda & \frac{\gamma}{m\omega^2} \\ \frac{\gamma}{m\omega^2} & 1-\lambda]=\qty(1-\lambda)^2-\frac{\gamma^2}{m^2\omega^4}=0\ \implies\ \lambda_{\pm}=1\pm\frac{\gamma}{m\omega^2}.$$ Calcoliamo ora gli autovettori\footnote{O meglio, le loro componenti rispetto alla base canonica di $\R^2$: $\qty{e_1,e_2}$} $Q_{\pm}$ associati agli autovalori $\lambda_{\pm}$, risolvendo i due sistemi:
+            Come \`e noto dalla \eqref{eq:potenziale:1}, \`e possibile riscrivere il potenziale come forma quadratica:
+                $$\frac{1}{2}m\omega^2\mqty(x&y)\mqty[1 & \frac{\gamma}{m\omega^2} \\ \frac{\gamma}{m\omega^2} & 1]\mqty(x\\y).$$
+            Poich\`e la matrice dei coefficienti \`e simmetrica, per il teorema spettrale \`e diagonalizzabile ed esiste quindi un cambio di coordinate che pone la forma quadratica in forma canonica, disaccoppiando di conseguenza le equazioni del moto.
+            \par Le nuove coordinate sono quelle identificate da una base (ortonormale) di autovettori della matrice, cerchiamo quindi gli zeri del polinomio caratteristico:
+                $$P\qty(\lambda)=\det\mqty[1-\lambda & \frac{\gamma}{m\omega^2} \\ \frac{\gamma}{m\omega^2} & 1-\lambda]=\qty(1-\lambda)^2-\frac{\gamma^2}{m^2\omega^4}=0\ \implies\ \lambda_{\pm}=1\pm\frac{\gamma}{m\omega^2}.$$
+            Calcoliamo ora gli autovettori\footnote{O meglio, le loro componenti rispetto alla base canonica di $\R^2$: $\qty{e_1,e_2}$} $Q_{\pm}$ associati agli autovalori $\lambda_{\pm}$, risolvendo i due sistemi:
             \begin{equation*}
             \begin{cases}
                 \displaystyle\qty(1-\lambda_{\pm})x+\frac{\gamma}{m\omega^2}y=0\\\\
                 \displaystyle\qty(1-\lambda_{\pm})y+\frac{\gamma}{m\omega^2}x=0
             \end{cases}
             \end{equation*}
-            e ottenendo quindi le componenti degli autovettori, $\qty[Q_{\pm}]=[x,\pm x]$. Scegliamo quindi due autovettori normalizzati: $$Q_{+}=\frac{1}{\sqrt{2}}\mqty(1 \\ -1),\quad Q_{-}=\frac{1}{\sqrt{2}}\mqty(1 \\ 1)$$ e la conseguente matrice di rotazione $$P=\frac{1}{\sqrt{2}}\mqty[1 & 1 \\ -1 & 1]\quad\text{tale che}\quad\mqty[1-\frac{\gamma}{m\omega^2} & 0 \\ 0 & 1+\frac{\gamma}{m\omega^2}]=P^\top\mqty[1 & \frac{\gamma}{m\omega^2} \\ \frac{\gamma}{m\omega^2} & 1]P.$$ Troviamo ora $e_1$ ed $e_2$ nelle nuove coordinate tramite i due sistemi vettoriali:
+            e ottenendo quindi le componenti degli autovettori, $\qty[Q_{\pm}]=[x,\pm x]$. Scegliamo quindi due autovettori normalizzati:
+                $$Q_{+}=\frac{1}{\sqrt{2}}\mqty(1 \\ -1),\quad Q_{-}=\frac{1}{\sqrt{2}}\mqty(1 \\ 1)$$
+            e la conseguente matrice di rotazione:
+                $$P=\frac{1}{\sqrt{2}}\mqty[1 & 1 \\ -1 & 1]\quad\text{tale che}\quad\mqty[1-\frac{\gamma}{m\omega^2} & 0 \\ 0 & 1+\frac{\gamma}{m\omega^2}]=P^\top\mqty[1 & \frac{\gamma}{m\omega^2} \\ \frac{\gamma}{m\omega^2} & 1]P.$$
+            Troviamo ora $e_1$ ed $e_2$ nelle nuove coordinate tramite i due sistemi vettoriali:
             \begin{align*}
                 e_1=xQ_++yQ_-\ & \iff\ \mqty(1 \\ 0)=\frac{1}{\sqrt{2}}\qty[x\mqty(1 \\ -1)+y\mqty(1 \\ 1)] \\\\
                 e_2=xQ_++yQ_-\ & \iff\ \mqty(0 \\ 1)=\frac{1}{\sqrt{2}}\qty[x\mqty(1 \\ -1)+y\mqty(1 \\ 1)] 
             \end{align*}
-            da cui $e_1=\frac{1}{\sqrt{2}}\qty(Q_++Q_-)$, $e_2=\frac{1}{\sqrt{2}}\qty(Q_+-Q_-)$. Trasformando le coordinate si ottiene il nuovo potenziale: $$V\qty(Q_+,Q_-)=\frac{1}{2}m\omega^2\qty(Q_+^2+Q_-^2)+\frac{\gamma}{2}\qty(Q_+^2-Q_-^2),$$ che si spezza facilmente in: $$V\qty(Q_+,Q_-)=\frac{1}{2}m\Omega_+^2Q_+^2+\frac{1}{2}m\Omega_-^2Q_-^2,$$ avendo fatto la posizione $\Omega_\pm^2=\omega^2\qty(1\pm\frac{\gamma}{m\omega^2})$.
+            da cui $e_1=\frac{1}{\sqrt{2}}\qty(Q_++Q_-)$, $e_2=\frac{1}{\sqrt{2}}\qty(Q_+-Q_-)$. Trasformando le coordinate si ottiene il nuovo potenziale:
+                $$V\qty(Q_+,Q_-)=\frac{1}{2}m\omega^2\qty(Q_+^2+Q_-^2)+\frac{\gamma}{2}\qty(Q_+^2-Q_-^2),$$
+            che si spezza facilmente in:
+                $$V\qty(Q_+,Q_-)=\frac{1}{2}m\Omega_+^2Q_+^2+\frac{1}{2}m\Omega_-^2Q_-^2,$$
+            avendo fatto la posizione $\Omega_\pm^2=\omega^2\qty(1\pm\frac{\gamma}{m\omega^2})$.
         \subsubsection{Equazioni del moto}
-            A questo punto trovare e risolvere le equazioni del moto \`e banale: $$\ddot{Q}_\pm=-\Omega_\pm^2Q_\pm\ \implies\ Q_\pm\qty(t)=A_\pm\cos\qty(\Omega_\pm t+\phi_\pm),$$ e attraverso la trasformazione inversa \`e possibile ricavare le $x\qty(t)$, $y\qty(t)$:
+            A questo punto trovare e risolvere le equazioni del moto \`e banale:
+                $$\ddot{Q}_\pm=-\Omega_\pm^2Q_\pm\ \implies\ Q_\pm\qty(t)=A_\pm\cos\qty(\Omega_\pm t+\phi_\pm),$$
+            e attraverso la trasformazione inversa \`e possibile ricavare le $x\qty(t)$, $y\qty(t)$:
             \begin{align*}
                 & x\qty(t)=\frac{Q_+\qty(t)+Q_-\qty(t)}{\sqrt{2}}=\frac{1}{\sqrt{2}}\qty[A_+\cos\qty(\Omega_+t+\phi_+)+A_-\cos\qty(\Omega_-t+\phi_-)] \\
                 & y\qty(t)=\frac{Q_+\qty(t)-Q_-\qty(t)}{\sqrt{2}}=\frac{1}{\sqrt{2}}\qty[A_+\cos\qty(\Omega_+t+\phi_+)-A_-\cos\qty(\Omega_-t+\phi_-)]
             \end{align*}
             Dove, come ci aspettavamo, $A_\pm$ e $\phi_\pm$ sono quattro costanti reali determinabili conoscendo le condizioni iniziali.
         \subsubsection{Energia cinetica}
-            Avendo operato una rotazione che non altera la metrica, ci aspettiamo che l'energia cinetica $T$ resti invariata da un S.d.R. all'altro. \par Dalla definizione $\displaystyle T=\frac{1}{2}m\norm{\vb{v}}^2$, sviluppando il prodotto scalare otteniamo: $$T=\frac{1}{2}m\qty(\dot{x}^2+\dot{y}^2)$$ Derivando le equazioni di trasformazione invece troviamo:
+            Avendo operato una rotazione che non altera la metrica, ci aspettiamo che l'energia cinetica $T$ resti invariata da un S.d.R. all'altro.
+            \par Dalla definizione $\displaystyle T=\frac{1}{2}m\norm{\vb{v}}^2$, sviluppando il prodotto scalare otteniamo: $$T=\frac{1}{2}m\qty(\dot{x}^2+\dot{y}^2)$$ Derivando le equazioni di trasformazione invece troviamo:
             \begin{align*}
                 &\dv{x}{t}=\dv{t}\frac{Q_++Q_-}{\sqrt{2}}=\frac{\dot{Q}_++\dot{Q}_-}{\sqrt{2}}\\
                 &\dv{y}{t}=\dv{t}\frac{Q_+-Q_-}{\sqrt{2}}=\frac{\dot{Q}_+-\dot{Q}_-}{\sqrt{2}}
@@ -70,10 +102,13 @@
 \section{Oscillatore a tre Gradi di Libert\`a}
     Proviamo ora a generalizzare ulteriormente quanto detto fin'ora per sistemi che abbiano pi\`u di due gradi di libert\`a. Iniziamo considerando il caso di tre masse legate da molle ideali con estremi liberi, per poi affrontare il caso con condizioni armoniche al contorno e successivamente generalizzare a $n$ masse.
     \subsection{Tre masse a estremi liberi}
-        Prendiamo in esame un sistema fisico formato da tre masse uguali $m$ vincolate a muoversi sull'asse $x$, collegate da due molle di costante $k=m\omega^2$. \par Le configurazioni di questo sistema fisico sono identificate dalle coordinate generalizzate $q^\alpha=\qty{x,y,z}$ che indicano la posizione delle tre massse rispetto all'origine. Sul sistema agiscono due forze, entrambe forze elastiche, che dipendono dalle due distanze $\qty(y-x)$ e $\qty(z-y)$. Possiamo facilmente calcolare il potenziale elastico delle molle:
+        Prendiamo in esame un sistema fisico formato da tre masse uguali $m$ vincolate a muoversi sull'asse $x$, collegate da due molle di costante $k=m\omega^2$.
+        \par Le configurazioni di questo sistema fisico sono identificate dalle coordinate generalizzate $q^\alpha=\qty{x,y,z}$ che indicano la posizione delle tre massse rispetto all'origine. Sul sistema agiscono due forze, entrambe forze elastiche, che dipendono dalle due distanze $\qty(y-x)$ e $\qty(z-y)$. Possiamo facilmente calcolare il potenziale elastico delle molle:
             $$V\qty(x,y,z)=\frac{1}{2}m\omega^2\qty(x-y)^2+\frac{1}{2}m\omega^2\qty(y-z)^2=$$
             $$=\frac{1}{2}m\omega^2\qty(x^2-2xy+2y^2-2yz+z^2),$$
-        la cui matrice associata \`e $\displaystyle B=\mqty[1 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 1]$. Procediamo come precedentemente per diagonalizzare il potenziale: $$P\qty(\lambda)=\det\mqty[1-\lambda & -1 & 0 \\ -1 & 2-\lambda & -1 \\ 0 & -1 & 1-\lambda]=\lambda\qty(1-\lambda)\qty(\lambda-3).$$ Gli autovalori sono $\lambda_0=0$, $\lambda_1=1$ e $\lambda_3=3$. Dal calcolo degli autovettori associati otteniamo le componenti dei vettori normalizzati:
+        la cui matrice associata \`e $\displaystyle B=\mqty[1 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 & 1]$. Procediamo come precedentemente per diagonalizzare il potenziale:
+            $$P\qty(\lambda)=\det\mqty[1-\lambda & -1 & 0 \\ -1 & 2-\lambda & -1 \\ 0 & -1 & 1-\lambda]=\lambda\qty(1-\lambda)\qty(\lambda-3).$$
+        Gli autovalori sono $\lambda_0=0$, $\lambda_1=1$ e $\lambda_3=3$. Dal calcolo degli autovettori associati otteniamo le componenti dei vettori normalizzati:
             $$q_0=\frac{1}{\sqrt{3}}\mqty(1 \\ 1 \\ 1),\quad q_1=\frac{1}{\sqrt{2}}\mqty(1 \\ 0 \\ -1),\quad q_3=\frac{1}{\sqrt{6}}\mqty(1 \\ -2 \\ 1),$$
         con cui possiamo costruire la matrice di rotazione $P$ tale che $\det P=1$ contenente $q_3$, $q_1$ e $q_0$ sulle colonne, che diagonalizza il potenziale:
             $$D=P^\top BP\ \iff\ PDP^\top=B.$$
@@ -101,9 +136,11 @@
             &y\qty(t)=\frac{1}{\sqrt{3}}\qty(v_0t+s_0)-\frac{2A_3}{\sqrt{6}}\cos\qty(\Omega_3t+\phi_3)\\
             &z\qty(t)=\frac{1}{\sqrt{3}}\qty(v_0t+s_0)-\frac{A_1}{\sqrt{2}}\cos\qty(\Omega_1t+\phi_1)+\frac{A_3}{\sqrt{3}}\cos\qty(\Omega_3t+\phi_3)
         \end{align*}
-        Come ci potevamo aspettare dalla presenza di tre equazioni lineari del secondo ordine, le equazioni del moto sono definite a meno di sei costanti arbitrarie: $v_0$, $s_0$, $A_1$, $\phi_1$, $A_3$ e $\phi_3$. \`E inoltre importante sottolineare il significato fisico legato alla presenza di $\lambda_0=0$ tra gli autovalori: possiamo notare che l'equazione del moto associata alla coordinata $q_0$ costituisce un moto rettilineo uniforme, e non oscillatorio, che suggerisce una simmetria del sistema per traslazioni. \par A questo punto risulta utile introdurre il concetto di \emph{modi normali di oscillazione}.
+        Come ci potevamo aspettare dalla presenza di tre equazioni lineari del secondo ordine, le equazioni del moto sono definite a meno di sei costanti arbitrarie: $v_0$, $s_0$, $A_1$, $\phi_1$, $A_3$ e $\phi_3$. \`E inoltre importante sottolineare il significato fisico legato alla presenza di $\lambda_0=0$ tra gli autovalori: possiamo notare che l'equazione del moto associata alla coordinata $q_0$ costituisce un moto rettilineo uniforme, e non oscillatorio, che suggerisce una simmetria del sistema per traslazioni.
+        \par A questo punto risulta utile introdurre il concetto di \emph{modi normali di oscillazione}.
     \subsection{Tre masse con condizioni periodiche al contorno}
-        Supponiamo adesso di avere tre masse disposte come nell'esempio precedente ma con l'ulteriore condizione che la prima e la terza massa interagiscano per mezzo di una terza molla di caratteristiche uguali alle altre due. Questa situazione fisica pu\`o essere meglio visualizzata come se sia le masse che le molle fossero vincolate a scorrere su di una circonferenza rigida $\gamma$ priva di attrito. \par Anche in questo caso possiamo ricorrere alle coordinate pure $x$, $y$ e $z$ che stavolta rappresentano le ascisse curvilinee condotte da un arbitraio punto $O\in\gamma$ fino a individuare la posizione delle tre masse. Il potenziale, similmente a prima, si presenta come: 
+        Supponiamo adesso di avere tre masse disposte come nell'esempio precedente ma con l'ulteriore condizione che la prima e la terza massa interagiscano per mezzo di una terza molla di caratteristiche uguali alle altre due. Questa situazione fisica pu\`o essere meglio visualizzata come se sia le masse che le molle fossero vincolate a scorrere su di una circonferenza rigida $\gamma$ priva di attrito.
+        \par Anche in questo caso possiamo ricorrere alle coordinate pure $x$, $y$ e $z$ che stavolta rappresentano le ascisse curvilinee condotte da un arbitraio punto $O\in\gamma$ fino a individuare la posizione delle tre masse. Il potenziale, similmente a prima, si presenta come: 
         \begin{multline*}
             V=\frac{1}{2}\omega^2\qty[\qty(x-y)^2+\qty(y-z)^2+\qty(z-x)^2]=\\=\frac{1}{2}m\omega^2\mqty(x & y & z)\mqty[\dmat[-1]{2,2,2}]\mqty(x \\ y \\ z)=\frac{1}{2}m\omega^2\underline{x}^\top B\underline{x}.
         \end{multline*}
@@ -111,12 +148,12 @@
             $$P\qty(\lambda)=\det\mqty[\dmat[-1]{2-\lambda,2-\lambda,2-\lambda}]=-\lambda\qty(\lambda-3)^2=0,$$
         che d\`a gli autovalori $\lambda_0=0$ e $\lambda_3=3$ doppio. Gli autovettori normalizzati che se ne ricavano sono:
             $$q_0=\frac{1}{\sqrt{3}}\mqty(1 & 1 & 1)\quad q_{3,1}=\frac{1}{\sqrt{}}\mqty( & & )$$
-\section{Oscillatore a $N$ Gradi di Libert\`a}
+\section{Oscillatore a $N$ Gradi di Libert\`a}\label{s:Ngradi}
     Generalizziamo definitivamente il problema considerando il caso di una catena di $N$ masse collegate a due a due da molle di costante elastica $k=m\omega^2$ con condizioni periodiche al contorno. \par Supponiamo per comodit\`a $N$ pari, denotiamo con $a$ il passo reticolare, con $x_n=na$ la posizione di equilibrio dell'$n$-esima massa $\qty(n=0,\dots,N-1)$ e con $L=Na$ la lunghezza della catena. Siano inoltre le funzioni $\zeta_n$ la dislocazione dell'$n$-esima massa dalla posizione di equilibrio $x_n$. Richiedere che le condizioni al contorno siano periodiche vuol dire supporre che l'ultima massa possa interagire con la prima, come se la catena formasse un cerchio. In termini matematici questo si traduce in:
     \begin{align}
         &x_{n+N}=x_n+L\equiv x_n \label{eq:period:1}\\
         &\zeta_{n+N}\equiv \zeta_n \label{eq:period:2}
-    \end{align} \par
+    \end{align}
     Il potenziale di un tale sistema ha forma:
     \begin{equation}
         V=\frac{1}{2}m\omega^2\sum_n\qty(\zeta_{n+1}-\zeta_n)^2.
@@ -125,12 +162,12 @@
     \subsection{Ricerca dei modi normali di oscillazione}
         A questo punto desideriamo provare che le seguenti relazioni costituiscono il cambio di coordinate che permette di passare dalle $\zeta_n$ alle $Q_q$ ove il potenziale \`e diagonalizzato:
         \begin{align}
-            &\zeta_n=\frac{1}{\sqrt{N}}\sum_q e^{iqx_n}Q_q \label{eq:cambio:1}\\
-            &Q_q=\frac{1}{\sqrt{N}}\sum_n e^{-iqx_n}\zeta_n \label{eq:cambio:2}
+            &\zeta_n=\frac{1}{\sqrt{N}}\sum_q \myexp{iqx_n}Q_q \label{eq:cambio:1}\\
+            &Q_q=\frac{1}{\sqrt{N}}\sum_n \myexp{-iqx_n}\zeta_n \label{eq:cambio:2}
         \end{align}
-        Allo scopo di dileguare eventuali perplessit\`a, vorrei giustificare rapidamente la presenza di esponenziali complessi nelle relazioni appena enunciate. Ci si potrebbe aspettare infatti, che le trasformazioni da cercare siano simili a quelle viste nei casi semplificati a due e tre dimensioni: somme di funzioni trigonometriche con opportuni coefficienti. Volendo, potremmo affrontare questo problema proprio in questo modo, se non fosse che ci\`o renderebbe i calcoli ben pi\`u tediosi, quando invece operare con gli esponenziali complessi elimina questo problema. Infatti, basta tenere a mente che $e^{i\theta}=\cos\theta+i\sin\theta$ e che di consguenza ci baster\`a prendere la parte reale della soluzione per raggiungere il nostro obiettivo. Sostanzialmente stiamo affrontando un problema di moto armonico in $\R$ risolvendo il corrispettivo problema di `moto circolare' in $\C$ e `proiettandolo' su $\R$. Si rimanda all'Appendice \ref{ap:A} per qualche cenno in pi\`u ai numeri complessi.
+        Allo scopo di dileguare eventuali perplessit\`a, vorrei giustificare rapidamente la presenza di esponenziali complessi nelle relazioni appena enunciate. Ci si potrebbe aspettare infatti, che le trasformazioni da cercare siano simili a quelle viste nei casi semplificati a due e tre dimensioni: somme di funzioni trigonometriche con opportuni coefficienti. Volendo, potremmo affrontare questo problema proprio in questo modo, se non fosse che ci\`o renderebbe i calcoli ben pi\`u tediosi, quando invece operare con gli esponenziali complessi elimina questo problema. Infatti, basta tenere a mente che $\myexp{i\theta}=\cos\theta+i\sin\theta$ e che di consguenza ci baster\`a prendere la parte reale della soluzione per raggiungere il nostro obiettivo. Sostanzialmente stiamo affrontando un problema di moto armonico in $\R$ risolvendo il corrispettivo problema di `moto circolare' in $\C$ e `proiettandolo' su $\R$. Si rimanda all'Appendice \ref{ap:A} per qualche cenno in pi\`u ai numeri complessi.
         \par Osserviamo subito che da \eqref{eq:period:1} e \eqref{eq:cambio:1} \`e possibile conoscere l'intervallo in cui variano le $q$:
-            $$e^{iqx_{n+N}}=e^{iqx_n}\ \iff\ e^{iqna}e^{iqL}=e^{iqna}\ \iff\ e^{iqL}=1,$$
+            $$\myexp{iqx_{n+N}}=\myexp{iqx_n}\ \iff\ \myexp{iqna}\myexp{iqL}=\myexp{iqna}\ \iff\ \myexp{iqL}=1,$$
         per cui deve essere $qL=2m\pi$, con $m\in\Z$. Sostituendo $L$ otteniamo:
         \begin{equation}
             q=\frac{2m\pi}{L}=\frac{2\pi}{a}\frac{m}{N}
@@ -141,31 +178,34 @@
         \begin{lemma} \label{lm:delta}
             Sotto le ipotesi del problema valgono le seguenti relazioni:
             \begin{align}
-                &\sum_{n}e^{iqx_n}=N\delta_{q,0} &n=0,\dots,N-1 \label{eq:delta:1}\\
-                &\sum_{q}e^{-iqx_n}=N\delta_{n,0} &q\in\left[-\frac{\pi}{a};\frac{\pi}{a}\right[ \label{eq:delta:2}
+                &\sum_{n}\myexp{iqx_n}=N\delta_{q,0} &n=0,\dots,N-1 \label{eq:delta:1}\\
+                &\sum_{q}\myexp{-iqx_n}=N\delta_{n,0} &q\in\left[-\frac{\pi}{a};\frac{\pi}{a}\right[ \label{eq:delta:2}
             \end{align}
         ove $\delta_{\alpha,\beta}$ \`e la Delta di Kronecker.
         \end{lemma}
         \begin{proof}
-            Proviamo la \eqref{eq:delta:1}. \par Se $q=0$, banalmente:
+            Proviamo la \eqref{eq:delta:1}.
+            \par Se $q=0$, banalmente:
                 $$\sum_{n=0}^{N-1}1=N.$$
             \par Se $q\neq0$, osserviamo che si pu\`o scrivere:
-                $$\sum_{n=0}^{N-1} e^{iqx_n}=\sum_{n=0}^{N-1} e^{iqna}=\sum_{n=0}^{N-1}\qty(e^{iqa})^n=\frac{1-e^{iqNa}}{1-e^{iqa}}$$
-            essendo il termine generale della successione delle somme parziali di una serie geometrica di ragione $e^{iqa}$. Sostituendo la \eqref{eq:q} si vede subito che tale somma risulta $0$. \\ Allo stesso modo si prova la \eqref{eq:delta:2}.
+                $$\sum_{n=0}^{N-1} \myexp{iqx_n}=\sum_{n=0}^{N-1} \myexp{iqna}=\sum_{n=0}^{N-1}\qty(\myexp{iqa})^n=\frac{1-\myexp{iqNa}}{1-\myexp{iqa}}$$
+            essendo il termine generale della successione delle somme parziali di una serie geometrica di ragione $\myexp{iqa}$. Sostituendo la \eqref{eq:q} si vede subito che tale somma risulta $0$. \\ Allo stesso modo si prova la \eqref{eq:delta:2}.
         \end{proof}
         \subsubsection{Invertibilit\`a}
-            Verifichiamo adesso che le trasformazioni \eqref{eq:cambio:1} e \eqref{eq:cambio:2} sono l'una l'inversa dell'altra mostrando che la loro composizione restituisce l'identit\`a: $$\zeta_n=\frac{1}{\sqrt{N}}\sum_{q}e^{iqx_n}\qty(\frac{1}{\sqrt{N}}\sum_{p=0}^e{N-1}e^{-iqx_p}\zeta_p)=\frac{1}{N}\sum_{p,q}e^{iq\qty(x_n-x_p)}\zeta_p.$$ Poich\'e $\zeta_p$ non dipende da $q$, \`e possibile estrarlo dalla rispettiva sommatoria:
-                $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\qty[\sum_q e^{iq\qty(x_n-x_p)}]$$
+            Verifichiamo adesso che le trasformazioni \eqref{eq:cambio:1} e \eqref{eq:cambio:2} sono l'una l'inversa dell'altra mostrando che la loro composizione restituisce l'identit\`a: $$\zeta_n=\frac{1}{\sqrt{N}}\sum_{q}\myexp{iqx_n}\qty(\frac{1}{\sqrt{N}}\sum_{p=0}^e{N-1}\myexp{-iqx_p}\zeta_p)=\frac{1}{N}\sum_{p,q}\myexp{iq\qty(x_n-x_p)}\zeta_p.$$ Poich\'e $\zeta_p$ non dipende da $q$, \`e possibile estrarlo dalla rispettiva sommatoria:
+                $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\qty[\sum_q \myexp{iq\qty(x_n-x_p)}]$$
             dove per il Lemma \ref{lm:delta} si pu\`o scrivere:
                 $$\zeta_n=\frac{1}{N}\sum_p\zeta_p\delta_{n,p}=\zeta_n$$
             che \`e appunto l'identit\`a.
         \subsubsection{Diagonalizzazione del potenziale}
             Ci chiediamo adesso se questo cambio di coordinate ci fornisca i modi normali di oscillazione del sistema, diagonalizzando il potenziale \eqref{eq:potenziale:2}. Studiamo la seguente quantit\`a:
             \begin{multline*}
-                \zeta_n^2=\frac{1}{N}\qty(\sum_q e^{iqx_n}Q_q)^2=\frac{1}{N}\qty(\sum_q e^{iqx_n}Q_q)\Biggl(\sum_{q'} e^{iq'x_n}Q_{q'}\Biggr)=\\=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}e^{i\qty(q+q')x_n},
+                \zeta_n^2=\frac{1}{N}\qty(\sum_q \myexp{iqx_n}Q_q)^2=\frac{1}{N}\qty(\sum_q \myexp{iqx_n}Q_q)\Biggl(\sum_{q'} \myexp{iq'x_n}Q_{q'}\Biggr)=\\=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}\myexp{i\qty(q+q')x_n},
             \end{multline*}
-            sommiamo quindi su $n$ e applichiamo ancora il Lemma \ref{lm:delta} dopo aver raccolto i termini comuni: $$\sum_n\zeta_n^2=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}\sum_ne^{i\qty(q+q')x_n}=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}N\delta_{q,-q'}=\sum_qQ_qQ_{-q}.$$
-            \par Prima di proseguire ulteriormente, facciamo delle considerazioni utili. Ricordiamo che le $\zeta_n$ sono funzioni reali e quindi deve essere $\zeta_n^*=\zeta_n$.\footnote{Con $\zeta_n^*$ indichiamo il complesso coniugato di $\zeta_n$} Inoltre, dalla \eqref{eq:cambio:1}, possiamo ricavare che $\zeta_n^*$ ha forma: $$\zeta_n^*=\frac{1}{\sqrt{N}}\sum_qe^{iqx_n}Q_q^*=\frac{1}{\sqrt{N}}\sum_{-q}e^{iqx_n}Q_{-q}^*,$$ dove, nello scrivere la seconda uguaglianza, \`e stato sfruttato il fatto che l'indice $q$ \`e saturato e quindi nulla vieta di `cambiargli il nome' in $-q$. Segue naturalmente:
+            sommiamo quindi su $n$ e applichiamo ancora il Lemma \ref{lm:delta} dopo aver raccolto i termini comuni: $$\sum_n\zeta_n^2=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}\sum_n\myexp{i\qty(q+q')x_n}=\frac{1}{N}\sum_{q,q'}Q_qQ_{q'}N\delta_{q,-q'}=\sum_qQ_qQ_{-q}.$$
+            \par Prima di proseguire ulteriormente, facciamo delle considerazioni utili. Ricordiamo che le $\zeta_n$ sono funzioni reali e quindi deve essere $\zeta_n^*=\zeta_n$.\footnote{Con $\zeta_n^*$ indichiamo il complesso coniugato di $\zeta_n$} Inoltre, dalla \eqref{eq:cambio:1}, possiamo ricavare che $\zeta_n^*$ ha forma:
+                $$\zeta_n^*=\frac{1}{\sqrt{N}}\sum_q\myexp{iqx_n}Q_q^*=\frac{1}{\sqrt{N}}\sum_{-q}\myexp{iqx_n}Q_{-q}^*,$$
+            dove, nello scrivere la seconda uguaglianza, \`e stato sfruttato il fatto che l'indice $q$ \`e saturato e quindi nulla vieta di `cambiargli il nome' in $-q$. Segue naturalmente:
             \begin{equation}
                 \zeta_n=\zeta_n^*\ \iff\ Q_q=Q_{-q}^*\ \iff\ Q_{-q}=Q_q^*.
                 \label{eq:QQ}
@@ -178,17 +218,18 @@
             \par A questo punto possiamo scrivere per esteso il potenziale, richiamando la \eqref{eq:potenziale:2}:
                 $$V=\frac{1}{2}m\omega^2\sum_n\qty(\zeta_{n+1}-\zeta_n)^2$$
             Valutiamo la quantit\`a tra parentesi:
-                $$\zeta_{n+1}-\zeta_n=\frac{1}{\sqrt{N}}\sum_qQ_q\qty(e^{iqx_{n+1}}-e^{iqx_n})=\frac{1}{\sqrt{N}}\sum_qQ_qe^{iqx_n}\qty(e^{iqa}-1)$$
+                $$\zeta_{n+1}-\zeta_n=\frac{1}{\sqrt{N}}\sum_qQ_q\qty(\myexp{iqx_{n+1}}-\myexp{iqx_n})=\frac{1}{\sqrt{N}}\sum_qQ_q\myexp{iqx_n}\qty(\myexp{iqa}-1)$$
             e inseriamola nel potenziale $V$ che, una volta sviluppato il quadrato similmente a prima e applicata la \eqref{eq:QQ}, diventa:
             \begin{multline*}
-                V=\frac{1}{2}\frac{m\omega^2}{N}\sum_n\sum_{q,q'}e^{iqx_n}\qty(e^{iqa}-1)e^{iq'x_n}\bigl(e^{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_{q,q'}\delta{q,-q'}\qty(e^{iqa}-1)\bigl(e^{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)Q_qQ_{-q}=\\=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)Q_qQ_q^*
+                V=\frac{1}{2}\frac{m\omega^2}{N}\sum_n\sum_{q,q'}\myexp{iqx_n}\qty(\myexp{iqa}-1)\myexp{iq'x_n}\bigl(\myexp{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_{q,q'}\delta{q,-q'}\qty(\myexp{iqa}-1)\bigl(\myexp{iq'a}-1\bigr)Q_qQ_{q'}=\\=\frac{1}{2}m\omega^2\sum_q\qty(\myexp{iqa}-1)\qty(\myexp{-iqa}-1)Q_qQ_{-q}=\\=\frac{1}{2}m\omega^2\sum_q\qty(\myexp{iqa}-1)\qty(\myexp{-iqa}-1)Q_qQ_q^*
             \end{multline*}
             Da cui la nuova espressione di $V$:
             \begin{equation}
-                V=\frac{1}{2}m\omega^2\sum_q\qty(e^{iqa}-1)\qty(e^{-iqa}-1)\norm{Q_q}^2
+                V=\frac{1}{2}m\omega^2\sum_q\qty(\myexp{iqa}-1)\qty(\myexp{-iqa}-1)\norm{Q_q}^2
             \end{equation}
-            che non \`e altro che una forma quadratica nelle variabili $Q_q$ la cui matrice dei coefficienti \`e diagonale e contiene gli autovalori $\qty(e^{iqa}-1)\qty(e^{-iqa}-1)$, ciascuno associato all'autovettore $Q_q$ corrispondente. Chiamiamo i vettori di base di queste nuove coordinate, $Q_q$, \emph{modi normali di oscillazione} del sistema. Queste coordinate in cui il potenziale \`e diagonale costuituiscono diversi `modi' di oscillare del sistema fisico, ciascuno linearmente indipendente dagli altri. Conseguenza di ci\`o \`e che qualunque moto periodico del sistema pu\`o essere espresso come combinazione lineare dei modi normali. \par Possiamo maneggiare ulteriormente la forma del potenziale moltiplicando e dividendo il risultato ottenuto per $\displaystyle 4i^2e^{i\frac{qa}{2}}$. Applicando le formule di Eulero otteniamo:
-                $$V=\frac{-4}{2}m\omega^2\sum_q\frac{e^{i\frac{qa}{2}}-e^{-i\frac{qa}{2}}}{2i}\frac{e^{-i\frac{qa}{2}}-e^{i\frac{qa}{2}}}{2i}\norm{Q_q}^2=2m\omega^2\sum_q\sin^2\qty(\frac{qa}{2})Q_q^2.$$
+            che non \`e altro che una forma quadratica nelle variabili $Q_q$ la cui matrice dei coefficienti \`e diagonale e contiene gli autovalori $\qty(\myexp{iqa}-1)\qty(\myexp{-iqa}-1)$, ciascuno associato all'autovettore $Q_q$ corrispondente. Chiamiamo i vettori di base di queste nuove coordinate, $Q_q$, \emph{modi normali di oscillazione} del sistema. Queste coordinate in cui il potenziale \`e diagonale costuituiscono diversi `modi' di oscillare del sistema fisico, ciascuno linearmente indipendente dagli altri. Conseguenza di ci\`o \`e che qualunque moto periodico del sistema pu\`o essere espresso come combinazione lineare dei modi normali.
+            \par Possiamo maneggiare ulteriormente la forma del potenziale moltiplicando e dividendo il risultato ottenuto per $\displaystyle 4i^2\myexp{i\frac{qa}{2}}$. Applicando le formule di Eulero otteniamo:
+                $$V=\frac{-4}{2}m\omega^2\sum_q\frac{\myexp{i\frac{qa}{2}}-\myexp{-i\frac{qa}{2}}}{2i}\frac{\myexp{-i\frac{qa}{2}}-\myexp{i\frac{qa}{2}}}{2i}\norm{Q_q}^2=2m\omega^2\sum_q\sin^2\qty(\frac{qa}{2})Q_q^2.$$
             Notiamo infine che ponendo:
             \begin{equation}
                 \Omega_q=2\omega\sin\qty(\frac{qa}{2}),
@@ -200,10 +241,11 @@
                 \label{eq:potenziale:3}
             \end{equation}
         \subsubsection{Relazione di dispersione}
-            \`E opportuno soffermarsi un istante a osservare la posizione \eqref{eq:dispersione:1}. Essa prende il nome di \emph{relazione di dispersione} e ci permette di esprimere la frequenza di oscillazione di ciacun modo normale in funzione del vettore d'onda $q$ associato. In questo caso notiamo che la relazione non \`e lineare, ma pu\`o essere approssimata come tale per i $q$ prossimi allo $0$ o se il passo $a$ \`e sufficientemente piccolo da rendere infinitesimo l'argomento del seno. Qualora ci\`o fosse possibile, la relazione di dispersione assumerebbe la forma $\Omega_q=\omega aq$, dove la quantit\`a $\omega a$ ha le dimensioni di una velocit\`a. \par L'argomento sar\`a ripreso pi\`u approfonditamente nel paragrafo \ref{s:casocontinuo} sullo studio del limite per $a\to 0$.
+            \`E opportuno soffermarsi un istante a osservare la posizione \eqref{eq:dispersione:1}. Essa prende il nome di \emph{relazione di dispersione} e ci permette di esprimere la frequenza di oscillazione di ciacun modo normale in funzione del vettore d'onda $q$ associato. In questo caso notiamo che la relazione non \`e lineare, ma pu\`o essere approssimata come tale per i $q$ prossimi allo $0$ o se il passo $a$ \`e sufficientemente piccolo da rendere infinitesimo l'argomento del seno. Qualora ci\`o fosse possibile, la relazione di dispersione assumerebbe la forma $\Omega_q=\omega aq$, dove la quantit\`a $\omega a$ ha le dimensioni di una velocit\`a.
+            \par L'argomento sar\`a ripreso pi\`u approfonditamente nel paragrafo \ref{s:casocontinuo} sullo studio del limite per $a\to 0$.
     \subsection{Energia cinetica e Lagrangiana}
         Applichiamo al sistema la definizione di energia cinetica che, essendo invariante per rototraslazioni, deve risultare uguale sia nelle $\dot{\zeta}_n$ che nelle $\dot{Q}_q$. Consideriamo:
-            $$\dot{\zeta}_n=\frac{1}{\sqrt{N}}\sum_qe^{iqx_n}\dot{Q}_q.$$
+            $$\dot{\zeta}_n=\frac{1}{\sqrt{N}}\sum_q\myexp{iqx_n}\dot{Q}_q.$$
         Con passaggi del tutto analoghi ai precedenti, troviamo:
             $$T=\frac{1}{2}m\sum_n\dot{\zeta}_n^2=\frac{1}{2}m\sum_q\dot{Q}_q\dot{Q}^*_q=\frac{1}{2}m\sum_q\dot{Q}_q^2$$
         La Lagrangiana risulta quindi:
@@ -214,10 +256,10 @@
     \subsection{Risoluzione delle equazioni del moto}
         Scriviamo ora le $N$ equazioni del moto sostituendo la \eqref{eq:mollelagrangiana} nelle equazioni di Eulero-Lagrange:
             $$\lagrange{\LL}{Q_q}{\dot{Q}_q}=0\ \implies\ \ddot{Q}_q=-\Omega_q^2Q_q,$$
-        che ammettono soluzioni del tipo $\displaystyle Q_q\qty(t)=e^{\pm i\Omega_qt}$. Le generiche soluzioni, presi $A_q^\pm\in\C$, possono essere scritte come: $\displaystyle Q_q\qty(t)=A_q^+e^{i\Omega_qt}+A_q^-e^{-i\Omega_qt}$ e, ponendo $\displaystyle A_q^\pm=\rho_q^\pm e^{i\phi_q^\pm}$:
-            $$Q_q\qty(t)=\rho_q^+e^{i\qty(\Omega_qt+\phi_q^+)}+\rho_q^-e^{i\qty(-\Omega_qt+\phi_q^-)}.$$
+        che ammettono soluzioni del tipo $\displaystyle Q_q\qty(t)=\myexp{\pm i\Omega_qt}$. Le generiche soluzioni, presi $A_q^\pm\in\C$, possono essere scritte come: $\displaystyle Q_q\qty(t)=A_q^+\myexp{i\Omega_qt}+A_q^-\myexp{-i\Omega_qt}$ e, ponendo $\displaystyle A_q^\pm=\rho_q^\pm \myexp{i\phi_q^\pm}$:
+            $$Q_q\qty(t)=\rho_q^+\myexp{i\qty(\Omega_qt+\phi_q^+)}+\rho_q^-\myexp{i\qty(-\Omega_qt+\phi_q^-)}.$$
         \par Proviamo a sostituire quest'ultima relazione nella \eqref{eq:cambio:1}:
-            $$\zeta_n\qty(t)=\frac{1}{\sqrt{N}}\sum_q\qty[\rho_q^+e^{i\qty(qx_n+\Omega_qt+\phi_q^+)}+\rho_q^-e^{i\qty(qx_n-\Omega_qt+\phi_q^-)}].$$
+            $$\zeta_n\qty(t)=\frac{1}{\sqrt{N}}\sum_q\qty[\rho_q^+\myexp{i\qty(qx_n+\Omega_qt+\phi_q^+)}+\rho_q^-\myexp{i\qty(qx_n-\Omega_qt+\phi_q^-)}].$$
         Ricordiamo adesso che stiamo sommando su un intervallo simmetrico e quindi a ogni valore di $q$ corrisponde un $-q$. Per la \eqref{eq:QQ}, possiamo riscrivere la somma per $q\geq 0$, e tenere conto dei termini con indice $-q$ separatamente. Tuttavia facendo ci\`o: 
         \begin{itemize}
             \item $\rho_{-q}^\pm=\rho_{q}^\pm$ in quanto \`e il modulo di un numero complesso ed \`e uguale al modulo del suo coniugato;
@@ -225,22 +267,52 @@
             \item $\Omega_{-q}=-\Omega_q$ in quanto $\Omega_q$ dipende dal seno di $q$, che \`e una funzione dispari.
         \end{itemize}
         Segue che ognuno dei due esponenziali della sommatoria si spezza in:
-            $$\rho_q^\pm e^{i\qty(qx_n\pm\Omega_qt+\phi_q^\pm)}+\rho_{q}^\pm e^{i\qty(-qx_n\mp\Omega_qt-\phi_{q}^\pm)},$$
-        che non \`e altro che la somma di due complessi coniugati, la quale restituisce la parte reale del numero complesso. In definitiva, tenuto conto di ci\`o, la \eqref{eq:cambio:1} diventa:
+            $$\rho_q^\pm \myexp{i\qty(qx_n\pm\Omega_qt+\phi_q^\pm)}+\rho_{q}^\pm \myexp{i\qty(-qx_n\mp\Omega_qt-\phi_{q}^\pm)},$$
+        che non \`e altro che la somma di due complessi coniugati, la quale restituisce due volte la parte reale del numero complesso. In definitiva la \eqref{eq:cambio:1} diventa:
         \begin{equation}
-            \zeta_n\qty(t)=\frac{1}{\sqrt{N}}\sum_q\qty[\rho_q^+\cos\qty(qx_n+\Omega_qt+\phi_q^+)+\rho_q^-\cos\qty(qx_n-\Omega_qt+\phi_q^-)]
+            \zeta_n\qty(t)=\frac{2}{\sqrt{N}}\sum_q\qty[\rho_q^+\cos\qty(qx_n+\Omega_qt+\phi_q^+)+\rho_q^-\cos\qty(qx_n-\Omega_qt+\phi_q^-)]
         \end{equation}
         \par Possiamo notare che la soluzione delle equazioni del moto \`e formata da una sovrapposizione di \emph{onde piane monocromatiche}, a cui verr\`a prestata pi\`u attenzioni nel corso del Capitolo \ref{ch:2}.
 \section{Il caso continuo}\label{s:casocontinuo}
-    Avevamo posto $L=Na$. Vediamo cosa succede per $a\rightarrow 0$ e $N\rightarrow+\infty$. A tale scopo \`e utile definire la nuova quantit\`a $\tilde{Q_q}$, a partire dalla \eqref{eq:cambio:2}:
-        $$\tilde{Q}_q=\frac{Q_q}{\sqrt{N}}=\frac{1}{N}\sum_{n=1}^Ne^{-iqx_n}\zeta_n,$$
-    Moltiplicando e dividendo per $a$ e passando al limite quello che otteniamo \`e:
-        $$\tilde{Q}_q=\frac{1}{Na}\sum_{n=1}^Ne^{-iqx_n}\zeta_na\quad\underset{N\to\infty}{\overset{a\to 0}{\implies}}\quad\tilde{Q}_q=\frac{1}{L}\int\limits_0^Le^{-iqx}\zeta\qty(x)\dd{x}.$$
-    \par Per quanto riguarda la trasformazione inversa facciamo riferimento alla \eqref{eq:cambio:1}, riscrivendola in funzione delle $\tilde{Q}_q$:
-        $$\zeta_n=\sum_qe^{iqx_n}\tilde{Q}_q.$$
-    Ricordando che le $q$ dipendono da $m$ per la \eqref{eq:q} e per $N\rightarrow+\infty$ anche il numero di $m$ su cui sommare diventa infinito, la somma diventa una serie di Fourier:
-    \begin{equation}
-        \zeta\qty(x)=\sum_{m=-\infty}^{+\infty}e^{iq_mx}\tilde{Q}_{q_m}
-        \label{eq:cambiocontinuo:2}
-    \end{equation}
-    
+    Fino ad ora non abbiamo fatto altro che cercare di risolvere la Fisica di sistemi contenenti un numero $N$ finito di masse. Tuttavia, pur tenendo a mente che la natura ha carattere discreto, in quanto di fatto gli atomi che compongono la materia sono entit\`a a loro volta discrete, pu\`o essere utile estendere questo studio al caso continuo, in quanto gli strumenti matematici forniti dall'analisi possono talvolta permetterci di risolvere con pi\`u facilit\`a i problemi che ci vengono posti.
+    \par \`E tuttavia opportuno tenere a mente che l'approssimazione continua pu\`o essere sfruttata al meglio solo in una scala adeguata, ad esempio quando le dimensioni del sistema fisico considerato sono molto maggiori del passo tra gli enti discreti che lo compongono, avendo allo stesso tempo la cura di trattare `unit\`a infinitesime' che contengano un numero sufficientemente elevato di particelle da poter essere a loro volta considerate continue. 
+    \subsection{Relazioni di trasformazione}
+        Nel paragrafo \ref{s:Ngradi} avevamo posto $L=Na$. Vediamo cosa succede per $a\rightarrow 0$ e $N\rightarrow+\infty$. A tale scopo \`e utile definire la nuova quantit\`a $\tilde{Q_q}$, a partire dalla \eqref{eq:cambio:2}:
+            $$\tilde{Q}_q=\frac{Q_q}{\sqrt{N}}=\frac{1}{N}\sum_{n=1}^N\myexp{-iqx_n}\zeta_n,$$
+        Moltiplicando e dividendo per $a$ e passando al limite quello che otteniamo \`e:
+        \begin{equation}
+            \tilde{Q}_q=\frac{1}{Na}\sum_{n=1}^N\myexp{-iqx_n}\zeta_na\quad\underset{N\to\infty}{\overset{a\to 0}{\implies}}\quad\tilde{Q}_q=\frac{1}{L}\int\limits_0^L\myexp{-iqx}\zeta\qty(x)\dd{x}.
+            \label{eq:cambiocontinuo:1}
+        \end{equation}
+        \par Per quanto riguarda la trasformazione inversa facciamo riferimento alla \eqref{eq:cambio:1}, riscrivendola in funzione delle $\tilde{Q}_q$:
+            $$\zeta_n=\sum_q\myexp{iqx_n}\tilde{Q}_q.$$
+        Ricordando che le $q$ dipendono da $m$ per la \eqref{eq:q} e per $N\rightarrow+\infty$ anche il numero di $m$ su cui sommare diventa infinito, la somma diventa una serie di Fourier:
+        \begin{equation}
+            \zeta\qty(x)=\sum_{m=-\infty}^{+\infty}\myexp{iq_mx}\tilde{Q}_{q_m}
+            \label{eq:cambiocontinuo:2}
+        \end{equation}
+    \subsection{Relazione di dispersione}
+        Riprendiamo quanto accennato precedentemente richiamando la relazione di dispersione per il caso di $N$ masse:
+        \begin{equation}
+            \Omega_q=2\omega\sin\qty(\frac{qa}{2}).
+            \tag{\ref{eq:dispersione:1}}
+        \end{equation}
+        Osserviamo che essendo il seno una funzione limitata ci\`o pone un limite ai valori che le $\Omega_q$ possono assumere, coerentemente col numero limitato dei possibili modi normali di oscillazione del sistema.
+        \par Al limite per $a\to 0$ tuttavia l'argomento del seno diventa infinitesimo e pu\`o essere ragionevolmente approsimato col primo termine della sua serie di Maclaurin:
+            $$\Omega_q=\omega aq=v_0q$$
+        restituendoci una relazione lineare in cui il coefficiente angolare ha tutte le carte in regola per essere una velocit\`a, motivo per cui. I mezzi fisici in cui la relazione di dispersione ha forma lineare vengono detti \emph{mezzi non dispersivi}, e si distinguono dai mezzi dispersivi per il fatto che la funzione d'onda che si propaga in essi \`e data da onde monocromatiche che si propagano con la medesima velocit\`a di fase coincidente con $v_0$.
+    \subsection{L'equazione differenziale delle onde}
+        Se riprendiamo il considerazione la catena di molle introdotta nel paragrafo \ref{s:Ngradi} possiamo ricavare da essa una equazione differenziale alle derivate parziali di notevole importanza.
+        \par Consideriamo la massa della catena associata alla posizione di equilibrio $x_n$. Su di essa agiranno in generale due forze dovute alla deformazione delle molle che la collegano alle masse in $x_{n-1}$ e in $x_{n+1}$. Denominiamole rispettivamente $F_{n+1}$ e $F_{n+1}$. Dalle equazioni di Newton risulta:
+            $$\vb{F}_{n-1}+\vb{F}_{n+1}=m\ddot{\zeta}_n\vu{i}$$
+        Passiamo ai moduli e, ricordando che la quantit\`a $F_{n-1}-F_{n+1}$ pu\`o essere scritta come $k\qty[\qty(\zeta_{n+1}-\zeta_n)-\qty(\zeta_{n}-\zeta_{n-1})]$, dividiamo ambo i membri per $a^2$ e portiamo $k$ a secondo membro:
+        \begin{equation}
+            \frac{1}{a}\qty[\frac{\qty(\zeta_{n+1}-\zeta_n)}{a}-\frac{\qty(\zeta_{n}-\zeta_{n-1})}{a}]=\frac{m}{ka^2}\ddot{\zeta_n}.
+            \label{eq:rapportiincrementali}
+        \end{equation}
+        Prima di passare al limite per $a\to 0$ ricordiamo che la $m$ che compare rappresenta la singola massa di ogni punto che forma la catena. Ponendo la massa totale $M=Nm$ otteniamo $\displaystyle\frac{m}{a}=\frac{M}{Na}=\frac{M}{L}=\rho$, con $\rho$ densit\`a media della catena che non dipende da $a$. Analogamente richiamiamo la definizione del modulo di compressibilit\`a $\beta$ come il fattore di proporzionalit\`a che mette in relazione la forza esercitata da un mezzo continuo alla sua deformazione. Nel caso unidimensionale di un'asta di lunghezza $l_0$ si avrebbe $\displaystyle F=\beta\frac{\var{l}}{l_0}$ da cui, nel caso della catena, $\displaystyle F=\beta\frac{\zeta_n}{a}=k\zeta_n$. Poich\'e $\beta$ \`e una costante del mezzo, segue $ka=\beta$.
+        \par Dalla sostituzione di entrambe nella \eqref{eq:rapportiincrementali} e passando al limite si ottiene:
+        \begin{equation}
+            \frac{1}{a}\qty[\frac{\qty(\zeta_{n+1}-\zeta_n)}{a}-\frac{\qty(\zeta_{n}-\zeta_{n-1})}{a}]=\frac{\rho}{\beta}\ddot{\zeta_n}\quad\overset{a\to 0}{\implies}\quad\pdv[2]{\zeta}{x}=\frac{\rho}{\beta}\pdv[2]{\zeta}{t}.
+        \end{equation}
+        Questa equazione differenziale alle derivate parziali prende il nome di \emph{Equazione di D'Alembert} o \emph{delle Onde} e sar\`a l'oggetto di studio del prossimo capitolo.

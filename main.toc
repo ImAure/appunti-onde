@@ -20,12 +20,15 @@
 \contentsline {subsection}{\numberline {5.2}Energia cinetica e Lagrangiana}{12}{}%
 \contentsline {subsection}{\numberline {5.3}Risoluzione delle equazioni del moto}{13}{}%
 \contentsline {section}{\numberline {6}Il caso continuo}{14}{}%
-\contentsline {chapter}{\numberline {2}L'Equazione delle Onde}{15}{}%
-\contentsline {subsection}{\numberline {0.1}Onde piane monocromatiche}{15}{}%
-\contentsline {chapter}{\numberline {A}Cenni sui Numeri Complessi}{17}{}%
-\contentsline {section}{\numberline {1}Costruzionde di $\mathbb {C}$}{17}{}%
-\contentsline {subsection}{\numberline {1.1}Forme e propriet\`a dei numeri complessi}{17}{}%
-\contentsline {subsubsection}{Forma algebrica}{17}{}%
-\contentsline {subsection}{\numberline {1.2}Forma trigonometrica ed esponenziale}{18}{}%
-\contentsline {section}{\numberline {2}Altre operazioni in $\mathbb {C}$}{19}{}%
-\contentsline {chapter}{\numberline {B}Cenni di Analisi Complessa}{21}{}%
+\contentsline {subsection}{\numberline {6.1}Relazioni di trasformazione}{14}{}%
+\contentsline {subsection}{\numberline {6.2}Relazione di dispersione}{15}{}%
+\contentsline {subsection}{\numberline {6.3}L'equazione differenziale delle onde}{15}{}%
+\contentsline {chapter}{\numberline {2}L'Equazione delle Onde}{17}{}%
+\contentsline {subsection}{\numberline {0.1}Onde piane monocromatiche}{17}{}%
+\contentsline {chapter}{\numberline {A}Cenni sui Numeri Complessi}{19}{}%
+\contentsline {section}{\numberline {1}Costruzionde di $\mathbb {C}$}{19}{}%
+\contentsline {subsection}{\numberline {1.1}Forme e propriet\`a dei numeri complessi}{19}{}%
+\contentsline {subsubsection}{Forma algebrica}{19}{}%
+\contentsline {subsection}{\numberline {1.2}Forma trigonometrica ed esponenziale}{20}{}%
+\contentsline {section}{\numberline {2}Altre operazioni in $\mathbb {C}$}{21}{}%
+\contentsline {chapter}{\numberline {B}Cenni di Analisi Complessa}{23}{}%
