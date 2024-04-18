@@ -1,17 +1,57 @@
-\chapter{L'Equazione delle Onde}\label{ch:2}
-[BOZZETTI]
-\subsection{Onde piane monocromatiche}
-        Le funzioni coseno che compaiono nel risultato precedente appartengono a una classe di funzioni particolari che meritano qualche parola in pi\`u. Chiamiamo le funzioni $A\cos\qty(qx\pm\omega t+\phi)$ \emph{onde piane monocromatiche}, le quali vengono dette \emph{progressive} nel caso del segno $-$ e \emph{regressive} nel caso del segno $+$. Introduciamo anche della nomenclatura utile\cite{Focardi2014-wy}:
-        \begin{itemize}
-            \item $q$ \`e il modulo del \emph{vettore d'onda};
-            \item $\omega$ \`e la \emph{frequenza angolare} o \emph{pulsazione} dell'onda;
-            \item $A$ \`e l'\emph{ampiezza} dell'onda;
-            \item $qx\pm\omega t+\phi$ \`e la \emph{fase} dell'onda.
-        \end{itemize}
-        Definiamo inoltre delle quantit\`a utili al resto della trattazione:
-        \begin{itemize}
-            \item $\displaystyle T=\frac{2\pi}{\omega}$ \`e detto \emph{periodo} e rappresenta il tempo necessario a un punto fissato nello spazio affinch\'e si ripeta la stessa fase;
-            \item $\displaystyle \lambda=\frac{2\pi}{q}$ \`e la \emph{lunghezza d'onda} e, fissato il tempo, rappresenta la distanza tra due punti con la stessa fase;
-            \item $\displaystyle v=\frac{\omega}{q}=\frac{\lambda}{T}$ \`e detta \emph{velocit\`a di fase} o \emph{di propagazione} e rappresenta la velocit\`a con cui un punto a fase fissata si sposta nello spazio.
-        \end{itemize}
-        \par Alla luce di quanto detto possiamo verificare facilmente che nel caso della catena di molle le lunghezze d'onda possono assumere solo ben determinati valori, dalla \eqref{eq:q}: $$\lambda_q=\frac{2\pi}{q}=2\pi\frac{Na}{2m\pi}=\frac{L}{m},$$ che si vedono essere frazioni di $L$ al variare di $m\in\Z$, $m>0$. Per il caso $m=0$, a cui sappiamo corrispondere il moto di traslazione, il $\displaystyle\lim_{q\to 0^+}\frac{2\pi}{q}=+\infty$ suggerisce proprio un moto che si ripete a distanza infinita.
+\chapter{Onde Elastiche}\label{ch:2}
+    In questo capitolo approfondiamo l'equazione differenziale trovata alla fine del Capitolo \ref{ch:1} e vedremo alcuni esempi di sistemi fisici in cui la propagazione di un qualche tipo di perturbazione soddisfa proprio tale equazione.
+\section{L'Equazione di D'Alembert unidimensionale}
+    L'equazione differenziale del secondo ordine alle derivate parziali \eqref{eq:dalembert:1} che abbiamo ricavato passando dalla catena di $N$ molle passando al limite del continuo \`e il caso particolare di un'equazione che nella forma pi\`u generale, seppur sempre nel caso unidimensionale, appare come:
+    \begin{equation}
+        \pdv[2]{\xi}{x}=\frac{1}{v^2}\pdv[2]{\xi}{t}
+        \label{eq:dalembert:2}
+    \end{equation}
+    Come gi\`a accennato in precedenza, essa prende il nome di \emph{Equazione di D'Alembert} o \emph{Equazione delle Onde} e descrive il comportamento di una funzione che mantiene il proprio `aspetto' invariato propagandosi lungo $x$ con velocit\`a $v$.
+    \subsection{Soluzioni dell'equazione di D'Alembert}
+        Si pu\`o dimostrare che le soluzioni di questa equazione sono delle funzioni $\func{\xi}{\R^2}{\C}$ che assumono la forma $\xi\qty(x,t)=f\qty(x\mp vt)$, verifichiamolo. Posto $z=x\mp vt$:
+        \begin{align*}
+            &\pdv{f}{x}=\dv{f}{z}\dv{z}{x}=\dv{f}{z}      &\implies& \quad\pdv[2]{f}{x}=\dv{z}\qty(\dv{f}{z})\dv{z}{x}=\dv[2]{f}{z}\\
+            &\pdv{f}{t}=\dv{f}{z}\dv{z}{t}=\mp v\dv{f}{z} &\implies& \quad\pdv[2]{f}{t}=\dv{z}\qty(\mp v\dv{f}{z})\dv{z}{t}=v^2\dv[2]{f}{z}
+        \end{align*}
+        Da cui:
+            $$\pdv[2]{f}{x}=\frac{1}{v^2}\pdv[2]{f}{t}$$
+        che \`e l'Equazione di D'Alembert. In generale, poich\'e la combinazione lineare di soluzioni di un'equazione lineare \`e ancora una soluzione, possiamo dire che la soluzione generale della \eqref{eq:dalembert:2} \`e del tipo: $\xi\qty(x,t)=f(x-vt)+g(x+vt)$
+        \par Proviamo ora a cercare, tra le soluzioni della \eqref{eq:dalembert:2}, delle funzioni fattorizzabili in funzioni delle sole variabili $x$ e $t$, cio\`e del tipo $\xi\qty(x,t)=\psi\qty(x)\chi\qty(t)$. Inserendo un tale tipo di funzione nell'equazione delle Onde si ottiene:
+            $$\psi''\qty(x)\chi\qty(t)=\frac{1}{v^2}\psi\qty(x)\chi''\qty(t),$$
+        da cui si evince che ciascuna delle due funzioni debba essere direttamente proporzionale alla propria derivata seconda. Infatti, imponendo che questa uguaglianza valga $\forall x,t$, se per esempio fissiamo la $x$, si deve avere una proporzionalit\`a diretta tra $\chi\qty(t)$ e $\chi''\qty(t)$, e viceversa.
+        \par Abbiamo quindi le due equazioni differenziali\footnote{La soluzione generale di ciascuna equazione differenziale\`e data, come di consueto da una combinazione lineare con coefficienti complessi arbitrari, come $A\myexp{ikx}+B\myexp{-ikx}$ (analogamente per l'equazione in $t$), ma questo dettaglio \`e stato omesso per semplicit\`a.}:
+        \begin{align*}
+            \psi''\qty(x)=-k^2\psi\qty(x)       &\implies \psi\qty(x)=\myexp{\pm ikx}\\
+            \chi''\qty(t)=-\omega^2\chi\qty(t)  &\implies \chi\qty(t)=\myexp{\pm i\omega t}
+        \end{align*}
+        Il che significa che le soluzioni fattorizzabili dell'equazione delle onde hanno forma:
+        \begin{equation}
+            \xi\qty(x,t)=\myexp{i\qty(kx\pm\omega t)}.
+        \end{equation}
+        Avendo escluso a priori le soluzioni identicamente nulle, osserviamo che deve valere la seguente catena di uguaglianze:
+            $$\frac{-\omega^2}{v^2}=\frac{1}{v^2}\frac{\chi''\qty(t)}{\chi\qty(t)}=\frac{\psi''\qty(x)}{\psi\qty(x)}=-k^2,$$
+        da cui segue $\omega^2=v^2k^2$, ossia $\omega=\pm vk$, che \`e la relazione di dispersione per l'equazione di D'Alembert.
+    \subsection{Onde piane monocromatiche}
+    
+    
+    
+    
+
+        %$\xi(x,t)=A\myexp{i\qty(kx\mp\omega t)}$. Osserviamo che raccogliendo $k$ ad esponente la funzione si trasforma in una $f\qty(x\mp vt)=A\myexp{ik\qty(x\mp vt)}$, con $v=\omega/k$ che risolve l'equazione delle onde.
+    \mycomment{
+                \subsection{Onde piane monocromatiche}
+                    Le funzioni coseno che compaiono nel risultato precedente appartengono a una classe di funzioni particolari che meritano qualche parola in pi\`u. Chiamiamo le funzioni $A\cos\qty(qx\pm\omega t+\phi)$ \emph{onde piane monocromatiche}, le quali vengono dette \emph{progressive} nel caso del segno $-$ e \emph{regressive} nel caso del segno $+$. Introduciamo anche della nomenclatura utile\cite{Focardi2014-wy}:
+                    \begin{itemize}
+                        \item $q$ \`e il modulo del \emph{vettore d'onda};
+                        \item $\omega$ \`e la \emph{frequenza angolare} o \emph{pulsazione} dell'onda;
+                        \item $A$ \`e l'\emph{ampiezza} dell'onda;
+                        \item $qx\pm\omega t+\phi$ \`e la \emph{fase} dell'onda.
+                    \end{itemize}
+                    Definiamo inoltre delle quantit\`a utili al resto della trattazione:
+                    \begin{itemize}
+                        \item $\displaystyle T=\frac{2\pi}{\omega}$ \`e detto \emph{periodo} e rappresenta il tempo necessario a un punto fissato nello spazio affinch\'e si ripeta la stessa fase;
+                        \item $\displaystyle \lambda=\frac{2\pi}{q}$ \`e la \emph{lunghezza d'onda} e, fissato il tempo, rappresenta la distanza tra due punti con la stessa fase;
+                        \item $\displaystyle v=\frac{\omega}{q}=\frac{\lambda}{T}$ \`e detta \emph{velocit\`a di fase} o \emph{di propagazione} e rappresenta la velocit\`a con cui un punto a fase fissata si sposta nello spazio.
+                    \end{itemize}
+                    \par Alla luce di quanto detto possiamo verificare facilmente che nel caso della catena di molle le lunghezze d'onda possono assumere solo ben determinati valori, dalla \eqref{eq:q}: $$\lambda_q=\frac{2\pi}{q}=2\pi\frac{Na}{2m\pi}=\frac{L}{m},$$ che si vedono essere frazioni di $L$ al variare di $m\in\Z$, $m>0$. Per il caso $m=0$, a cui sappiamo corrispondere il moto di traslazione, il $\displaystyle\lim_{q\to 0^+}\frac{2\pi}{q}=+\infty$ suggerisce proprio un moto che si ripete a distanza infinita.
+    }
