@@ -19,7 +19,7 @@
         \par Proviamo ora a cercare, tra le soluzioni della \eqref{eq:dalembert:2}, delle funzioni fattorizzabili in funzioni delle sole variabili $x$ e $t$, cio\`e del tipo $\xi\qty(x,t)=\psi\qty(x)\chi\qty(t)$. Inserendo un tale tipo di funzione nell'equazione delle Onde si ottiene:
             $$\psi''\qty(x)\chi\qty(t)=\frac{1}{v^2}\psi\qty(x)\chi''\qty(t),$$
         da cui si evince che ciascuna delle due funzioni debba essere direttamente proporzionale alla propria derivata seconda. Infatti, imponendo che questa uguaglianza valga $\forall x,t$, se per esempio fissiamo la $x$, si deve avere una proporzionalit\`a diretta tra $\chi\qty(t)$ e $\chi''\qty(t)$, e viceversa.
-        \par Abbiamo quindi le due equazioni differenziali\footnote{La soluzione generale di ciascuna equazione differenziale\`e data, come di consueto da una combinazione lineare con coefficienti complessi arbitrari, come $A\myexp{ikx}+B\myexp{-ikx}$ (analogamente per l'equazione in $t$), ma questo dettaglio \`e stato omesso per semplicit\`a.}:
+        \par Abbiamo quindi le due equazioni differenziali\footnote{La soluzione generale di ciascuna equazione differenziale \`e data, come di consueto da una combinazione lineare con coefficienti complessi arbitrari, come $A\myexp{ikx}+B\myexp{-ikx}$ (analogamente per l'equazione in $t$), ma questo dettaglio \`e stato omesso per semplicit\`a.}:
         \begin{align*}
             \psi''\qty(x)=-k^2\psi\qty(x)       &\implies \psi\qty(x)=\myexp{\pm ikx}\\
             \chi''\qty(t)=-\omega^2\chi\qty(t)  &\implies \chi\qty(t)=\myexp{\pm i\omega t}
@@ -34,7 +34,16 @@
     \subsection{Onde piane monocromatiche}
     
     
-    
+\section{Esempi di derivazione di onde elastiche}
+    Andiamo ora a vedere quattro sistemi fisici in cui una perturbazione esterna induce nel sistema fisico un comportamento ben descritto dall'equazione di D'Alembert.
+    \subsection{Onde in una corda tesa}
+        Per cominciare osserviamo che una corda tesa pu\`o essere trattata in maniera simile a una catena di molle e masse di passo $a$ come quella del capitolo precedente, seppur di lunghezza infinita e posta preventivamente in tensione. Infatti, se il sistema non fosse in tensione, piccole perturbazioni trasversali avrebbero effetti trascurabili sul sistema. Disponiamo la catena lungo l'asse $x$ del piano $Oxy$ e supponiamo di sollevare l'$n$-esima massa a una quota $y_n\ll a$ l'allungamento della molla sar\`a $l-a$, con $l=\sqrt{a^2+y_n^2}$. Sfruttando lo sviluppo binomiale di Maclaurin troviamo:
+            $$l-a=a\sqrt{1+\frac{y_n^2}{a^2}}-a\simeq a\qty(1+\frac{y_n^2}{2a^2})-a=\frac{y_n^2}{2a},$$
+        quantit\`a che va quadraticamente a $0$ per $y_n\to0$. Di conseguenza il contributo di forza perpendicolare dovuto alla forza elastica sar\`a trascurabile se confrontato con quello longitudinale, che dipende linearmente dallo spostamento lungo $x$.
+        \par Vediamo invece che succede se la catena di molle viene tesa uniformemente con una tensione di modulo $T$. Ogni massa occuper\`a una posizione $(x_n,y_n)$, con $x_n=na$ fissata, concidente con la posizione di equilibrio, e $y_n$ funzione del tempo\footnote{Le $y_n$ sono anche funzione della posizione lungo $x$, ma ci\`o \`e implicitamente contenuto nel fatto che a ogni massa corrisponde una $x_n$ fissata e quindi ogni $y_n$ \`e associata a una posizione costante tramite l'indice $n$.}. Al variare delle $y_n$, la forza che agisce su ogni massa non sar\`a pi\`u, in generale, parallela all'asse $x$. Indicando con $\theta$ l'angolo che il segmento unente l'$n$-esima massa alla successiva stacca dall'asse $x$, la forza si scompone in una componente lungo $x$, di modulo $F_{n,x}^+=T\cos\theta$, e una componente lungo $y$, pari a $F_{n,y}^+=T\sin\theta$.
+        \par Se supponiamo di trattare solo piccole perturbazioni possiamo linearizzare seno e coseno tramite le rispettive serie di Maclaurin. Si ottiene quindi $F_{n,x}^+\simeq T$ e $F_{n,y}^+\simeq T\theta$, da cui, tenendo conto del fatto che al primo ordine $\sin\theta\simeq\theta\simeq\tan\theta$:
+            $$F_{n,y}^+\simeq T\frac{y_{n+1}-y_n}{a}$$
+
     
 
         %$\xi(x,t)=A\myexp{i\qty(kx\mp\omega t)}$. Osserviamo che raccogliendo $k$ ad esponente la funzione si trasforma in una $f\qty(x\mp vt)=A\myexp{ik\qty(x\mp vt)}$, con $v=\omega/k$ che risolve l'equazione delle onde.

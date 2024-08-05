@@ -30,6 +30,7 @@
 
 % ---- AMBIENTI PERSONALI ----
 \newtheorem{lemma}{Lemma}[chapter]
+\newtheorem{definition}{Definizione}[chapter]
 
 % ---- COMANDI PERSONALI ----
 \newcommand{\N}{\mathbb{N}}
@@ -39,11 +40,12 @@
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\LL}{\mathcal{L}}
 
-\newcommand{\func}[3]{#1:#2\rightarrow#3}
+\newcommand{\func}[3]{#1\colon#2\rightarrow#3}
 \newcommand{\myexp}[1]{e^{#1}}
 \newcommand{\lagrange}[3]{\dv{t}\pdv{#1}{#3}-\pdv{#1}{#2}}
 \newcommand{\mycomment}[1]{}
 
+% ---- DOCUMENTO ----
 \begin{document}
 \input{misc/title}
 
@@ -51,16 +53,20 @@
 \input{misc/preface}
 \input{misc/programme}
 \input{misc/toc}
-
 \pagenumbering{arabic}
-\input{chapters/chapter1}
-\input{chapters/chapter2}
 
+%
+\part{Richiami di Matematica}
+\input{chapters/maths/m1} % numeri complessi
+\input{chapters/maths/m2} % analisi complessa (residui e fourier)
+%
+\part{Oscillazioni e Onde}
+\input{chapters/phys/c1}
+\input{chapters/phys/c2}
 \appendix
-\input{chapters/appA}
-\input{chapters/appB}
 
 
+\DeclareEmphSequence{\itshape}
 \printbibliography
 
 \end{document}

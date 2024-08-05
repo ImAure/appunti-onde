@@ -1,6 +1,6 @@
-\chapter{Cenni sui Numeri Complessi}\label{ap:A}
-I numeri complessi sono la naturale estensione del campo reale $\qty(\R,+,\cdot)$ che pur sacrificando la relazione d'ordine permettono di avere una struttura algebricamente chiusa. \par I contenuti di questo capitolo fanno prevalentemente riferimento alla fonte \cite{Di_Fazio2013-vk}, con alcune modifiche e aggiunte personali.
-\section{Costruzionde di $\C$}
+\chapter{Numeri Complessi}\label{ap:A}
+I numeri complessi sono la naturale estensione del campo reale $\qty(\R,+,\cdot)$ che, pur sacrificando la relazione d'ordine, permettono di avere una struttura algebricamente chiusa. \par I contenuti di questo capitolo fanno prevalentemente riferimento alle fonti \cite{Di_Fazio2013-vk,Presilla2013-uz}, con alcune modifiche e aggiunte personali.
+\section{Costruzione di $\C$}
 Sia $\R^2=\qty{\qty(x,y):x,y\in\R}$, poniamo $z_1=\qty(x_1,\ y_1)$, $z_2=\qty(x_2,\ y_2)$ e siano definite le operazioni:
 \begin{align*}
     \func{+}{\R^2\times\R^2}{\R^2}\quad&\qty(z_1,\ z_2)\mapsto\qty(x_1+x_2,\ y_1+y_2)\\
@@ -23,7 +23,7 @@ Chiamiamo $\C=\qty(\R^2,+,\cdot)$ la struttura cos\`i costruita, che si dimostra
             \item $\overline{z}=x-iy$, detto \emph{complesso coniugato} di $z$.
         \end{itemize}
         Vale inoltre la propriet\`a $\abs{z}=z\overline{z}$.
-    \subsection{Forma trigonometrica ed esponenziale}
+    \subsubsection{Forma trigonometrica ed esponenziale}
         Come noto, \`e possibile rappresentare i punti del piano $\qty(x,y)\in\R^2$, escluso $\qty(0,0)$ in coordinate polari, fissando le due coordinate $\rho$ e $\theta$, detti rispettivamente \emph{raggio} e \emph{angolo polare}. \par Pensando ai numeri complessi come punti del piano, si osserva: $$x=\rho\cos\theta,\quad y=\rho\sin\theta,$$ da cui: $$z=\rho\qty(\cos\theta+i\sin\theta),$$ che viene detta \emph{forma trigonometrica} di $z$. Segue naturalmente che:
         \begin{itemize}
             \item $\rho=\abs{z}$;
@@ -35,19 +35,29 @@ Chiamiamo $\C=\qty(\R^2,+,\cdot)$ la struttura cos\`i costruita, che si dimostra
             e^{i\theta}=\cos\theta+i\sin\theta,
             \label{eq:euler:1}
         \end{equation}
-        la quale prende il nome di \emph{formula di Eulero}.\footnote{Da cui la pi\`u popolare \emph{identit\`a di Eulero}: $e^{i\pi}+1=0$} Segue che qualunque numero complesso $z\neq 0$ pu\`o essere espresso come: $$z=\rho\qty(\cos\theta+i\sin\theta)=\rho e^{i\theta},$$ che viene detta \emph{forma esponenziale} del numero complesso. \par Dall'identit\`a di Eulero seguono altre due importanti relazioni. Consideriamo ancora $z=e^{i\theta}$ e il suo coniugato, che per le precedenti \`e naturalmente $\overline{z}=e^{-i\theta}$:
+        la quale prende il nome di \emph{formula di Eulero}.\footnote{Da cui la pi\`u popolare \emph{identit\`a di Eulero}: $e^{i\pi}+1=0$} Segue che qualunque numero complesso $z\neq 0$ pu\`o essere espresso come: $$z=\rho\qty(\cos\theta+i\sin\theta)=\rho e^{i\theta},$$ che viene detta \emph{forma esponenziale} del numero complesso.
+        \par Dalla formula di Eulero seguono altre importanti relazioni. Consideriamo ancora $z=e^{i\theta}$ e il suo coniugato, che per le precedenti \`e naturalmente $\overline{z}=e^{-i\theta}$:
         \begin{align}
-            z+\overline{z}=e^{i\theta}+e^{-i\theta}=2\cos\theta\ &\iff\ \cos\theta=\frac{e^{i\theta}+e^{-i\theta}}{2}\\
-            z-\overline{z}=e^{i\theta}-e^{-i\theta}=2i\sin\theta\ &\iff\ \sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i}
+            z+\overline{z}=e^{i\theta}+e^{-i\theta}=2\cos\theta\ \iff\ \cos\theta=\frac{e^{i\theta}+e^{-i\theta}}{2}\\
+            z-\overline{z}=e^{i\theta}-e^{-i\theta}=2i\sin\theta\ \iff\ \sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i}
         \end{align}
-    \section{Altre operazioni in $\C$}
-        Per poter operare al meglio coi numeri complessi, introduciamo dei metodi per eseguire con facilit\`a le operazioni di elevamento a potenza ed estrazione di radice. Consideriamo due numeri $z_1=\rho_1e^{i\theta_1}$ e $z_2=\rho_2e^{i\theta_2}$. Il loro prodotto \`e: $$z_1z_2=\rho_1e^{i\theta_1}\rho_2e^{i\theta_2}=\rho_1\rho_2e^{i\qty(\theta_1+\theta_2)}.$$ Da ci\`o deduciamo che per qualunque $z\neq 0$ e $k\in\Z$, possiamo scrivere:
+        Inoltre, per qualunque $z_1,z_2\in\C$ si ha:
+            $$z_1z_2=\rho_1e^{i\theta_1}\rho_2e^{i\theta_2}=\rho_1\rho_2e^{i\qty(\theta_1+\theta_2)}.$$
+        da cui:
+        \begin{equation}
+            \overline{z_1z_2}=\rho_1\rho_2\myexp{-i\qty(\theta_1+\theta_2)}=\rho_1\myexp{-i\theta_1}\rho_2\myexp{-i\theta_2}=\overline{z}_1\overline{z}_2
+            \label{eq:prodottoconiugati}
+        \end{equation}
+    \section{Formula di De Moivre e radici in $\C$}
+        Per poter operare al meglio coi numeri complessi, introduciamo dei metodi per eseguire con facilit\`a le operazioni di elevamento a potenza ed estrazione di radice. Consideriamo due numeri $z_1=\rho_1e^{i\theta_1}$ e $z_2=\rho_2e^{i\theta_2}$ e il loro prodotto:
+            $$z_1z_2=\rho_1\rho_2e^{i\qty(\theta_1+\theta_2)}.$$
+        Da questa scrittura possiamo inutire che per qualunque $z\neq 0$ e $k\in\Z$, possiamo scrivere:
         \begin{equation}
             z^k=\rho^ke^{ik\theta}=\rho^k\qty(\cos k\theta+i\sin k\theta)
             \label{eq:demoivre}
         \end{equation}
         che viene detta formula di De Moivre e pu\`o essere dimostrata per induzione su $k$.
-        \par Vale inoltre la seguente:
-            $$\overline{z_1z_2}=\rho_1\rho_2\myexp{-i\qty(\theta_1+\theta_2)}=\rho_1\myexp{-i\theta_1}\rho_2\myexp{-i\theta_2}=\overline{z}_1\overline{z}_2$$
-        
-        
+        \par Il lettore potrebbe essere indotto a pensare che una scrittura simile sia corretta anche per gli esponenti razionali, come nel caso dell'estrazione di radice. Tuttavia \`e necessario tenere a mente che estrarre la radice $n$-esima, con $n\in\N$, di un numero complesso $a$ vuol dire risolvere l'equazione:
+            $$z^n=a,$$
+        che in $\C$ ha $n$ soluzioni distinte, in virt\`u del teorema fondamentale dell'algebra. Per tali soluzioni \`e ancora una volta possibile fare riferimento alla forma esponenziale e trigonometrica dei numeri complessi, infatti ricordando che per la periodicit\`a di seno e coseno $a=\rho\myexp{i\qty(\theta+2m\pi)}$, $m\in\Z$ deve essere:
+            $$z^n=\rho\myexp{i\qty(\theta+2m\pi)}\ \iff\ z=\rho^{\frac{1}{n}}\myexp{i\qty(\frac{\theta+2m\pi}{n})},\quad m=0,\dots,n-1.$$
